@@ -62,12 +62,10 @@ _ERROR;
                    VALUES('$username','$firstname','$lastname','$email','$token','1','2016-08-05','1','1.0','1.0','1')";
             
              $result = $db->query($query);
-             if(!$result) echo "INSERT failed: $query<br>".
-                $db->error."<br><br>";
-                
-            echo "seccessfully entered into database.";    
+             
+             if(!$result) echo "INSERT failed: $query<br>".$db->error."<br><br>";
+             else echo "seccessfully entered into database.";    
             
-            $result->close();
             
     //--------------------------------------------------------------------------------------------------------------------------            
             
@@ -97,7 +95,7 @@ _ERROR;
             $headers = 'From:noreply@radiant-taiga-47474.herokuapp.com' . "\r\n"; // Set from headers
             mail($to, $subject, $message, $headers); // Send our email
         }
-
+        
             //-------------------------------verification email --------------------------------------------
         
     }

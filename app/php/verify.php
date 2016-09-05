@@ -33,7 +33,6 @@
         echo "Please use the link that has been send to your email.";
     }
 
-    $result1->close();
     $db1->close();
 
 ?>

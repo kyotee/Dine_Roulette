@@ -35,19 +35,20 @@
             <head>
                 <noscript>
                     <style>html{display:none;}</style>
-                    <meta http-equiv="refresh" content="0.0;url=/html/nojavascript.html">
+                    <meta http-equiv="refresh" content="0.0;url=/app/html/nojavascript.html">
                 </noscript>
                 
                 <title>Registration</title>
-                <script src='/javascript/jquery-3.1.0.min.js'></script>
-                <script src="/javascript/signup.js"></script>
+                <script src='/DineRoulette-tamkylet/app/javascript/jquery-3.1.0.min.js'></script>
+                <script src='/DineRoulette-tamkylet/app/javascript/signup.js'></script>                
+                <script src='/DineRoulette-tamkylet/app/javascript/login.js'></script>
             </head>
             
             <body>
                   <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee">
                     <th colspan="2" align="center">Signup Form</th>
 
-                  <form method="post" action="/app/php/registration.php" onSubmit="return validate(this)">
+                  <form method="post" action="/DineRoulette-tamkylet/app/php/registration.php" onSubmit="return validate(this)">
                     <br>
                     <tr>
                         <td id='signup'></td>
