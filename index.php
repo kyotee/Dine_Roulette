@@ -79,13 +79,45 @@
                     </tr>
                 </form>
                 </table>
-            </body>
-            
-           </html>
 _END;
     
     //-------------------------------------------- Registration -------------------------------------------    
 
    
    
+    
+    //----------------------------------------------- Login -----------------------------------------------   
+   
+    echo <<<_END1
+                  <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee">
+                    <th colspan="2" align="center">Login Form</th>
+        
+                  <form method="post" action="/DineRoulette-tamkylet/app/php/login.php" onSubmit="return validate1(this)">
+                    <br>
+                    <tr>
+                        <td id='login'></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>Username</td>
+                        <td><input type="text" maxlength="12" name="username"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" maxlength="20" name="password"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="submit" value="Login"></td>
+                    </tr>
+                </form>
+                </table>    
+_END1;
+    
+
+    //----------------------------------------------- Login -----------------------------------------------    
+   
+   
+   
+   echo "</body>";
+   echo "</html>";
 ?>

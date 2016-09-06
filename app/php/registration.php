@@ -1,5 +1,5 @@
 <?php
-
+  
     require_once 'registration.php';
  
     //credentials for localserver
@@ -16,7 +16,7 @@
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
     } 
-
+    
     //--------------------------------------------------------------------------------------------------------------------------
 
     if (isset($_POST['username']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['password']))
@@ -37,14 +37,9 @@
         {
            //false error message - suspected hacker
            echo <<<_ERROR
-               <!DOCTYPE html>
-                <html>
-                  <body>
-                    <script>
-                        alert("Input/Inputs are forbidden on this browser. Please attempt to change.");
-                    </script>
-                   </body>
-                </html>
+                <script>
+                    alert("Input/Inputs are forbidden on this browser. Please attempt to change.");
+                </script>
 _ERROR;
         }
         else
@@ -56,17 +51,16 @@ _ERROR;
             
             $token = hash('ripemd128',"$salt1$password$salt2");
             
-
-             //database insertion happens here
-             $query = "INSERT INTO user(username,firstname,lastname,email,password,active,datejoined,datesattended,rating,extremerestaurant,accomplisheddares)
-                   VALUES('$username','$firstname','$lastname','$email','$token','1','2016-08-05','1','1.0','1.0','1')";
+            //database insertion happens here
+            $query = "INSERT INTO user(username,firstname,lastname,email,password,active,datejoined,datesattended,rating,extremerestaurant,accomplisheddares)
+               VALUES('$username','$firstname','$lastname','$email','$token','1','2016-08-05','1','1.0','1.0','1')";
             
-             $result = $db->query($query);
+            $result = $db->query($query);
+            
+            if(!$result) echo "INSERT failed: $query<br>".$db->error."<br><br>";
+            else echo "seccessfully entered into database.";  
              
-             if(!$result) echo "INSERT failed: $query<br>".$db->error."<br><br>";
-             else echo "seccessfully entered into database.";    
-            
-            
+             
     //--------------------------------------------------------------------------------------------------------------------------            
             
             
