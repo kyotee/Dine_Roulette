@@ -39,10 +39,11 @@
            
            $passwordmatch = $result2->fetch_assoc()['password'];
            
+         
            $salt1 = "qm&h*";
            $salt2 = "pg!@";
             
-           $token = hash('ripemd128',"$salt1$passwordmatch$salt2");           
+           $token = hash('ripemd128',"$salt1$checkpassword$salt2");           
            
 
            if($token == $passwordmatch)
@@ -50,7 +51,7 @@
 
                echo <<<HOME
                         <script>
-                            document.location.href = '/app/php/home.php';
+                            document.location.href = '/DineRoulette-tamkylet/app/php/home.php';
                         </script>
 HOME;
            }
