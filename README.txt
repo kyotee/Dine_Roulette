@@ -5,7 +5,7 @@ This project is remade from "DineRoulette" project ("DineRoulette" project repo:
 Folder contains source code for DineRoulette web-based application.
 
 [DURATION OF PROJECT]
-Approximately two-three weeks from 09/03/2016
+Undetermined; applying consistency.
 
 [DECLAIMER]
 This application is for learning purposes only. 
@@ -18,5 +18,5 @@ Please contact me at: tamkylet@sfu.ca if any legal issues that exist.
 -restaurant table created in dine DB  //2016-09-04 5:47pm
 -dines table created in dine DB  //2016-09-04 5:48pm
 
-
-
+[ADMINISTRATOR ACCESS]
+-Username: masteruser    Password: dinerouletteA1

@@ -49,11 +49,10 @@
            if($token == $passwordmatch)
            {
 
-               echo <<<HOME
-                        <script>
-                            document.location.href = '/DineRoulette-tamkylet/app/php/home.php';
-                        </script>
-HOME;
+               if($checkusername == "masteruser")
+                    echo "<script>document.location.href = '/DineRoulette-tamkylet/app/php/userlist.php';</script> ";      
+               else
+                    echo "<script>document.location.href = '/DineRoulette-tamkylet/app/php/home.php';</script> "; 
            }
            else
            {
