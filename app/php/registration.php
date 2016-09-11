@@ -57,7 +57,7 @@ _ERROR;
             
             $result = $db->query($query);
             
-            if(!$result) echo "INSERT failed: $query<br>".$db->error."<br><br>";
+            if(!$result) echo "Username already exists, please enter a different username.";
             else echo "seccessfully entered into database.";  
              
              
