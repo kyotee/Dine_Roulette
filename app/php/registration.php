@@ -39,6 +39,7 @@
            echo <<<_ERROR
                 <script>
                     alert("Input/Inputs are forbidden on this browser. Please attempt to change.");
+                    document.location.href = '/DineRoulette-tamkylet/index.php';
                 </script>
 _ERROR;
         }
@@ -57,8 +58,30 @@ _ERROR;
             
             $result = $db->query($query);
             
-            if(!$result) echo "Username already exists, please enter a different username.";
-            else echo "seccessfully entered into database.";  
+            if(!$result) 
+            {
+                session_start();
+                $exist = "Username already exists, please enter a different username.";
+                $_SESSION['message'] = $exist;
+
+           echo <<<_MSG
+                <script>
+                    document.location.href = '/DineRoulette-tamkylet/index.php';
+                </script>
+_MSG;
+            }
+            else 
+            {
+                session_start();
+                $success = "Seccessfully entered into database.";
+                $_SESSION['message'] = $success;
+                
+            echo <<<_MSG
+                <script>
+                    document.location.href = '/DineRoulette-tamkylet/index.php';
+                </script>
+_MSG;
+            }
              
              
     //--------------------------------------------------------------------------------------------------------------------------            
@@ -95,6 +118,7 @@ _ERROR;
     }
     else
     {
+        //dummy message
         echo "Please enter all credentials.";
     }
 

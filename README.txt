@@ -28,5 +28,10 @@ Please contact me at: tamkylet@sfu.ca if any legal issues that exist.
 -restaurant table created in dine DB  //2016-09-04 5:47pm
 -dines table created in dine DB  //2016-09-04 5:48pm
 
+[IMAGE REFERENCE]
+/DineRoulette-tamkylet/app/images/gastown.png
+source: http://www.hellovancity.com/lifestyle/beautiful-night-shot-of-gastown-downtown-vancouver-photo/
+
 [ADMINISTRATOR ACCESS]
 -Username: masteruser    Password: dinerouletteA1
+

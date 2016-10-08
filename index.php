@@ -28,24 +28,28 @@
    
     //-------------------------------------------- Registration -------------------------------------------   
 
+    include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/layout.html");
+
     echo <<<_END
-        <!DOCTYPE html>
-          <html>
+        
             <head>
                 <noscript>
                     <style>html{display:none;}</style>
                     <meta http-equiv="refresh" content="0.0;url=/app/html/nojavascript.html">
                 </noscript>
                 
-                <title>Registration</title>
                 <script src='/DineRoulette-tamkylet/app/javascript/jquery-3.1.0.min.js'></script>
                 <script src='/DineRoulette-tamkylet/app/javascript/signup.js'></script>                
                 <script src='/DineRoulette-tamkylet/app/javascript/login.js'></script>
+                
+                <link href="/DineRoulette-tamkylet/app/css/signup.css" rel="stylesheet" type="text/css"/>
             </head>
             
             <body>
-                  <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee">
-                    <th colspan="2" align="center">Signup Form</th>
+                <div id="signup1" style="display:none">
+                
+                  <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee" width="400">
+                    <th colspan="2" align="center">DineRoulette</th>
 
                   <form method="post" action="/DineRoulette-tamkylet/app/php/registration.php" onSubmit="return validate(this)">
                     <br>
@@ -78,6 +82,7 @@
                     </tr>
                 </form>
                 </table>
+               </div>
 _END;
     
     //-------------------------------------------- Registration -------------------------------------------    
@@ -86,10 +91,29 @@ _END;
    
     
     //----------------------------------------------- Login -----------------------------------------------   
+   session_start();
+   if($_SESSION['message'])
+   {
+
+echo <<<_END5
+
+<script>
+    var oline2 = <?php echo $_SESSION["oline2"]; ?>;
+</script>
+
+
+_END5;
+
+   } 
+   else
+   {}
    
     echo <<<_END1
-                  <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee">
-                    <th colspan="2" align="center">Login Form</th>
+
+                <div id="login1">
+                
+                  <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee" width="400">
+                    <th colspan="2" align="center">DineRoulette</th>
         
                   <form method="post" action="/DineRoulette-tamkylet/app/php/login.php" onSubmit="return validate1(this)">
                     <br>
@@ -110,6 +134,12 @@ _END;
                     </tr>
                 </form>
                 </table>    
+                
+                <button id="link">Register</button>
+                <script>
+                    $('#link').click( function() { $("#signup1").show(); $("#login1").hide(); })
+                </script>
+              </div>
 _END1;
     
 
