@@ -29,6 +29,20 @@
     //-------------------------------------------- Registration -------------------------------------------   
 
     include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/layout.html");
+    
+    if (isset($_COOKIE['exists']))
+    {
+    echo <<<_END
+         <script>
+             var message = "Username already exists, try another username.";
+             alert(message);
+         </script>
+_END;
+        setcookie('exists', 'exists', time() - 20, '/');
+    }
+    else
+    {}
+    
 
     echo <<<_END
         
@@ -87,31 +101,38 @@ _END;
     
     //-------------------------------------------- Registration -------------------------------------------    
 
+    if (isset($_COOKIE['success']))
+    {
+    echo <<<_END
+         <script>
+             var message = "Registration successful, please see e-mail to verify.";
+             alert(message);
+         </script>
+_END;
+        setcookie('success', 'success', time() - 20, '/');
+    }
+    else
+    {}   
    
-   
-    
+ 
+    if (isset($_COOKIE['mismatch']))
+    {
+    echo <<<_END
+         <script>
+             var message = "Invalid credentials, please try again.";
+             alert(message);
+         </script>
+_END;
+        setcookie('mismatch', 'mismatch', time() - 20, '/');
+    }
+    else
+    {}      
     //----------------------------------------------- Login -----------------------------------------------   
-   session_start();
-   if($_SESSION['message'])
-   {
 
-echo <<<_END5
-
-<script>
-    var oline2 = <?php echo $_SESSION["oline2"]; ?>;
-</script>
-
-
-_END5;
-
-   } 
-   else
-   {}
    
     echo <<<_END1
 
                 <div id="login1">
-                
                   <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee" width="400">
                     <th colspan="2" align="center">DineRoulette</th>
         
@@ -137,7 +158,7 @@ _END5;
                 
                 <button id="link">Register</button>
                 <script>
-                    $('#link').click( function() { $("#signup1").show(); $("#login1").hide(); })
+                    $('#link').click( function() { $("#signup1").show(); $("#login1").hide(); });
                 </script>
               </div>
 _END1;

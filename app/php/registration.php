@@ -60,9 +60,7 @@ _ERROR;
             
             if(!$result) 
             {
-                session_start();
-                $exist = "Username already exists, please enter a different username.";
-                $_SESSION['message'] = $exist;
+                setcookie('exists', 'exists', time() + 20, '/');
 
            echo <<<_MSG
                 <script>
@@ -72,45 +70,42 @@ _MSG;
             }
             else 
             {
-                session_start();
-                $success = "Seccessfully entered into database.";
-                $_SESSION['message'] = $success;
+                setcookie('success', 'success', time() + 20, '/');  
                 
-            echo <<<_MSG
+    //--------------------------------------------------------------------------------------------------------------------------            
+            
+            
+                //-------------------------------verification email --------------------------------------------
+                //verification email used only when deployment server is created
+                //...right now we will assume every signup was verified => active set to '1' 
+                
+                $token1 = hash('ripemd128',"$salt1$email$salt2");
+                
+                $to      = $email;
+                $subject = 'DineRoulette | Verification';
+                $message = '
+                 
+                Thanks for signing up!
+                Your account has been created, you can login with the following username after you have activated your account by pressing the url below.
+                 
+                ------------------------
+                Username: '.$username.'
+                ------------------------
+                 
+                Please click this link to activate your account:
+                https://radiant-taiga-47474.herokuapp.com/app/php/verify.php?email='.$email.'&token1='.$token1.'
+                 
+                ';
+                
+                $headers = 'From:noreply@radiant-taiga-47474.herokuapp.com' . "\r\n"; // Set from headers
+                mail($to, $subject, $message, $headers); // Send our email
+                
+                echo <<<_MSG
                 <script>
                     document.location.href = '/DineRoulette-tamkylet/index.php';
                 </script>
 _MSG;
-            }
-             
-             
-    //--------------------------------------------------------------------------------------------------------------------------            
-            
-            
-            //-------------------------------verification email --------------------------------------------
-            //verification email used only when deployment server is created
-            //...right now we will assume every signup was verified => active set to '1' 
-            
-            $token1 = hash('ripemd128',"$salt1$email$salt2");
-            
-            $to      = $email;
-            $subject = 'DineRoulette | Verification';
-            $message = '
-             
-            Thanks for signing up!
-            Your account has been created, you can login with the following username after you have activated your account by pressing the url below.
-             
-            ------------------------
-            Username: '.$username.'
-            ------------------------
-             
-            Please click this link to activate your account:
-            https://radiant-taiga-47474.herokuapp.com/app/php/verify.php?email='.$email.'&token1='.$token1.'
-             
-            ';
-            
-            $headers = 'From:noreply@radiant-taiga-47474.herokuapp.com' . "\r\n"; // Set from headers
-            mail($to, $subject, $message, $headers); // Send our email
+           }
         }
         
             //-------------------------------verification email --------------------------------------------

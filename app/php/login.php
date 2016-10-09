@@ -57,12 +57,25 @@
            else
            {
                 //under id='login' -> Username and password don't match please try again. - add restrictions
-                echo "Credentials didn't match; please try again.";
+                setcookie('mismatch', 'mismatch', time() + 20, '/');
+           echo <<<_MSG
+                <script>
+                    document.location.href = '/DineRoulette-tamkylet/index.php';
+                </script>
+_MSG;
            }
         }
+                setcookie('mismatch', 'mismatch', time() + 20, '/');
+           echo <<<_MSG
+                <script>
+                    document.location.href = '/DineRoulette-tamkylet/index.php';
+                </script>
+_MSG;
+        
     }
     else
     {
+         //dummy message
          echo "Please enter both Username and Password.";
     }
 
