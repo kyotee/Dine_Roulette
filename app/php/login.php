@@ -46,12 +46,17 @@
            $token = hash('ripemd128',"$salt1$checkpassword$salt2");           
            
 
-           if($token == $passwordmatch)
+           if($token == $passwordmatch)   //password mismatch
            {
-
                if($checkusername == "masteruser")
-                    echo "<script>document.location.href = '/DineRoulette-tamkylet/app/php/userlist.php';</script> ";      
+               {
+                    session_start();
+                    $_SESSION['userIDmaster'] = 1;
+                    echo "<script>document.location.href = '/DineRoulette-tamkylet/app/php/userlist.php';</script> "; 
+               }
                else
+                    session_start();
+                    $_SESSION['userID'] = 1;
                     echo "<script>document.location.href = '/DineRoulette-tamkylet/app/php/home.php';</script> "; 
            }
            else
@@ -65,7 +70,9 @@
 _MSG;
            }
         }
-                setcookie('mismatch', 'mismatch', time() + 20, '/');
+        
+        //username does not exist
+           setcookie('mismatch', 'mismatch', time() + 20, '/');
            echo <<<_MSG
                 <script>
                     document.location.href = '/DineRoulette-tamkylet/index.php';
