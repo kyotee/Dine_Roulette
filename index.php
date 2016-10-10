@@ -62,6 +62,7 @@ _END;
             </head>
             
             <body>
+            
                 <div id="signup1" style="display:none">
                 
                   <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee" width="400">
@@ -99,6 +100,7 @@ _END;
                 </form>
                 </table>
                </div>
+             
 _END;
     
     //-------------------------------------------- Registration -------------------------------------------    
@@ -133,7 +135,7 @@ _END;
 
    
     echo <<<_END1
-
+             
                 <div id="login1">
                   <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee" width="400">
                     <th colspan="2" align="center">DineRoulette</th>
@@ -163,6 +165,7 @@ _END;
                     $('#link').click( function() { $("#signup1").show(); $("#login1").hide(); });
                 </script>
               </div>
+              
 _END1;
     
 
