@@ -14,8 +14,8 @@ _MSG;
         {}
         
     include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletontop.html");
-    
-    echo "This is the home page.";
+
+    echo "This is the profile page.";
 
     include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletonbottom.html");
 
