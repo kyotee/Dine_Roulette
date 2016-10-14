@@ -1,6 +1,6 @@
 
 .inborder{
-  position:absolute;
+  position:fixed;
   top:0em;
   height:4em;
   left:0em;
@@ -28,6 +28,16 @@
   font-family: Arial,Helvetica,Sans-Serif;
 }
 
+.home{
+  position:absolute;
+  text-decoration: none;
+  top:1.20em;
+  right:17.25em;
+  font-size:1.25em;
+  color:white;
+  font-family: Arial,Helvetica,Sans-Serif;
+}
+
 .profile{
   position:absolute;
   text-decoration: none;
@@ -48,14 +58,14 @@
   font-family: Arial,Helvetica,Sans-Serif;
 }
 
-#inbordermidhelp
+.inbordermid
 {
   position:absolute;
   top:4em;
   bottom:7.5em;
 }
 
-#inbordermidhelpPAD
+.inbordermidPAD
 {
   padding-top:1em;
   padding-left:4.5em;
@@ -81,5 +91,19 @@ blockquote{
   background-color:#555555;
 }
 
+.inborderbottom1{
+  position:fixed;
+  bottom:0em;
+  height:7.5em;
+  left:0em;
+  right:0em;
+  background-color:#555555;
+  
+}
 
+#profilepic1{
+  float: right;
+  position: relative;
+  left:-10em;
+}
 

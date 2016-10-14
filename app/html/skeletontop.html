@@ -12,6 +12,7 @@
             <div class="inborder">
                 <a class="msg" href="/DineRoulette-tamkylet/app/php/home.php">DineRoulette</a>
                 <a class="signout" href="/DineRoulette-tamkylet/index.php">Signout</a>
+                <a class="home" href="/DineRoulette-tamkylet/app/php/home.php">Home</a>
                 <a class="profile" href="/DineRoulette-tamkylet/app/php/profile.php">Profile</a>
                 <a class="help" href="/DineRoulette-tamkylet/app/php/help.php">Help</a>
             </div>
@@ -20,3 +21,18 @@
             <br/><br/><br/><br/>
             
             <script src='/DineRoulette-tamkylet/app/javascript/functionEvents.js'></script>
+            
+            
+            <script>
+                $(window).scroll(function() {
+                
+                    if ($(this).scrollTop()>0)
+                     {
+                     $('.inborder').fadeOut();
+                     }
+                    else
+                     {
+                      $('.inborder').fadeIn();
+                     }
+                 });
+            </script>             

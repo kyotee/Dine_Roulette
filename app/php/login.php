@@ -57,6 +57,7 @@
                else
                     session_start();
                     $_SESSION['userID'] = 1;
+                    $_SESSION['username'] = $checkusername;
                     echo "<script>document.location.href = '/DineRoulette-tamkylet/app/php/home.php';</script> "; 
            }
            else

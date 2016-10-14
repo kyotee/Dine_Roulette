@@ -20,11 +20,11 @@ _MSG;
     
        <body>
        
-            <div id="inbordermidhelp">
+            <div class="inbordermid">
             
-            <div id="inbordermidhelpPAD">
+            <div class="inbordermidPAD">
                 <br/>
-                <p class="titles">Here is how it works</p>
+                <p class="titles">Here's How It Works</p>
                 <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
                 
                 <blockquote>
@@ -37,7 +37,7 @@ _MSG;
                 
                 
                <br/>
-                <p class="titles">How to use service</p>
+                <p class="titles">How To Use Our Service</p>
                 <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
                 
                 <blockquote>
@@ -50,7 +50,7 @@ _MSG;
                 
                 
                <br/>
-                <p class="titles">Suggestions to users</p>
+                <p class="titles">Suggestions To Users</p>
                 <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
                 
                 <blockquote>

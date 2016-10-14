@@ -20,7 +20,7 @@ _MSG;
     
     echo "This is the home page.";
 
-    include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletonbottom.html");
+
 
 
 ?>
