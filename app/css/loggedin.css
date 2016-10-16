@@ -101,9 +101,20 @@ blockquote{
   
 }
 
+
+
 #profilepic1{
   float: right;
   position: relative;
   left:-10em;
+  font-family: Helvetica,Arial,Sans-Serif;
 }
 
+.homeimg{
+  display: inline-block;
+  margin-left:2.5em;
+}
+
+.homeimgtext{
+  display: none;
+}

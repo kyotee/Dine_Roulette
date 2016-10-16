@@ -49,7 +49,7 @@ _END;
 
             $query = "SELECT * 
                       FROM user
-                      WHERE username = '$username'";
+                      WHERE username = '$username' or username = masteruser";
                       
             $result = $db->query($query);
             if (!$result) die ("Database access failed: " . $db->error);
@@ -62,11 +62,10 @@ _END;
                 $row = $result->fetch_array(MYSQLI_NUM);
                 
                 echo <<<_END1
+                
 <blockquote>
 
-        <div id="profilepic">
-        
-                <img src='/DineRoulette-tamkylet/app/images/derp.png' style='width:28%;height:28%' alt='[]' />
+                <img src='/DineRoulette-tamkylet/app/images/derp.png' style='width:10em;height:10em' alt='[]' />
                 
                 <div id="profilepic1">
         
@@ -83,15 +82,8 @@ _END;
                         
                         </pre>
                         
-                        <pre>
-                        <ul>
-
-                        </ul>
-                        </pre>
-                        
                 </div>
         
-        </div>
 
 </blockquote>
 _END1;
