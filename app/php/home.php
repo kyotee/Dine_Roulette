@@ -59,12 +59,12 @@ _END;
                 $result->data_seek($j);
                 $row = $result->fetch_array(MYSQLI_NUM);
                 
+                
                 echo <<<_END1
                 
-
             <div class="homeimg">
         
-                <img src='/DineRoulette-tamkylet/app/images/derp.png' style='width:10em;height:10em' alt='[]' />
+                <img src='/DineRoulette-tamkylet/app/images/memberPictures/abcabc1.png' style='width:10em;height:10em' alt='[]' />
                 
                 <div class="homeimgtext">
                 

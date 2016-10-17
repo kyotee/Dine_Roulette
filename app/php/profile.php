@@ -49,7 +49,7 @@ _END;
 
             $query = "SELECT * 
                       FROM user
-                      WHERE username = '$username' or username = masteruser";
+                      WHERE username = '$username'";
                       
             $result = $db->query($query);
             if (!$result) die ("Database access failed: " . $db->error);

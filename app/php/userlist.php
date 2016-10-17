@@ -75,6 +75,9 @@ _END;
         $result = $db->query($query);
         if (!$result) echo "INSERT failed: $query<br>" .
         $db->error . "<br><br>";
+        
+        copy('/home/ubuntu/workspace/DineRoulette-tamkylet/app/images/derp.png', '/home/ubuntu/workspace/DineRoulette-tamkylet/app/images/memberPictures/derp.png');
+        rename('/home/ubuntu/workspace/DineRoulette-tamkylet/app/images/memberPictures/derp.png', '/home/ubuntu/workspace/DineRoulette-tamkylet/app/images/memberPictures/'.$username.'.png');
     }
     
     echo <<<_END
