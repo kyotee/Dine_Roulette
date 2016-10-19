@@ -43,6 +43,7 @@ _MSG;
             <div class="inbordermidPAD">
                 <br/>
                 <p class="titles">Your Profile</p>
+                <br/>
 _END;
 
             $username = $_SESSION['username'];

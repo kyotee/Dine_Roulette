@@ -35,3 +35,7 @@ source: http://www.hellovancity.com/lifestyle/beautiful-night-shot-of-gastown-do
 [ADMINISTRATOR ACCESS]
 -Username: masteruser    Password: dinerouletteA1
 
+[PROBLEMS]
+Despite upgrading to PHP 5.6.27 there is a problem inserting php variables into html text
+Needed for home.php by inserting variable into <img></img> html tag
+Possible solution: Sessions/Cookies and jQuery to write into <img> tag

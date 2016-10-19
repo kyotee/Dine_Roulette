@@ -36,18 +36,21 @@ _MSG;
     
        <body>
        
+       
             <div class="inbordermid">
             
             <div class="inbordermidPAD">
                 <br/>
                 <p class="titles">Member List</p>
+                </br>
 _END;
 
             $username = $_SESSION['username'];
+            $username1 = "masteruser";
 
             $query = "SELECT * 
                       FROM user
-                      WHERE username != '$username'";
+                      WHERE username != '$username' && username != '$username1'";
                       
             $result = $db->query($query);
             if (!$result) die ("Database access failed: " . $db->error);
@@ -62,36 +65,42 @@ _END;
                 
                 echo <<<_END1
                 
-            <div class="homeimg">
+      
+      <div class="homeplace">   
+                
+            <div class="homeimg">    
+                
+              <img src='/DineRoulette-tamkylet/app/images/memberPictures/$row[0].png' style='width:10em;height:10em' alt='[]' />
+          
+            </div>
         
-                <img src='/DineRoulette-tamkylet/app/images/memberPictures/abcabc1.png' style='width:10em;height:10em' alt='[]' />
+             <div class="hometext">
+                <pre>
+            
+                Username:  $row[0]      
+                Firstname: $row[1]      
+                Lastname:  $row[2]      
+                E-mail:    $row[3]   
                 
-                <div class="homeimgtext">
+                Dates Attended:     $row[7]
+                Rating:             $row[8]
+                Extreme Resturants: $row[9]
+                Accomplished Dares: $row[10]
                 
-                    <pre>
-                    
-                    Username:  $row[0]      
-                    Firstname: $row[1]      
-                    Lastname:  $row[2]      
-                    E-mail:    $row[3]   
-                    
-                    Dates Attended:     $row[7]
-                    Rating:             $row[8]
-                    Extreme Resturants: $row[9]
-                    Accomplished Dares: $row[10]
-                    
-                    </pre>
-                
-                </div>
-                
-            </div>   
-
-            <script>
-                $(".homeimg").mouseover(function() { $(this).css("display", "none");
-                                                     $(".homeimgtext").css("display","inline-block");
-                } )
-            </script>
-                
+                </pre>
+               </div>
+               
+               <script>
+               $(".homeplace").hover(function(){
+                $(this).css("background-color", "#E0FFFF");
+                }, function(){
+                $(this).css("background-color", "");
+                });
+               </script>
+        
+        </div>
+               
+            
 
 _END1;
             }
@@ -105,12 +114,11 @@ _END1;
                 
                 <br/><br/>
                 
-            </div>    
                 
-                <div class="inborderbottom">
-                </div>
-                
+            </div>   
+            
             </div>
+                
             
        </body>
         

@@ -1,3 +1,14 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+
+.wrapper{
+  position:relative;
+}
 
 .inborder{
   position:fixed;
@@ -98,9 +109,8 @@ blockquote{
   left:0em;
   right:0em;
   background-color:#555555;
-  
-}
 
+}
 
 
 #profilepic1{
@@ -110,11 +120,27 @@ blockquote{
   font-family: Helvetica,Arial,Sans-Serif;
 }
 
-.homeimg{
-  display: inline-block;
-  margin-left:2.5em;
+
+.homeplace{
+     float:left;
+     border: 0.2em solid #ADD8E6;
+     border-radius: 2.5em;
+     padding:0.25em;
+     margin-left:1.5em;
+     margin-bottom:1.5em;
 }
 
-.homeimgtext{
-  display: none;
+.homeimg{
+      display:inline-block;
+      left:3em;
+      top:-0.5em;
+    position:relative;
 }
+
+.hometext{
+    display:inline-block;
+    left:-2em;
+    top:0.5em;
+    position:relative;
+}
+
