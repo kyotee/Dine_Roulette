@@ -68,9 +68,9 @@ _END;
       
       <div class="homeplace">   
                 
+                
         <div class="placeholder">  
         
-                
             <div class="homeimg">    
                 
               <img src='/DineRoulette-tamkylet/app/images/memberPictures/$row[0].png' style='width:5.25em;height:5.25em' alt='[]' />
@@ -92,9 +92,10 @@ _END;
                
                 <button class="acdc">Request Date</button>
                
-                <script src='/DineRoulette-tamkylet/app/javascript/home.js'></script>
-               
             </div>   
+            
+        
+                <script src='/DineRoulette-tamkylet/app/javascript/home.js'></script>
         
         </div>
                

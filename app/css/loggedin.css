@@ -127,6 +127,7 @@ blockquote{
      border-radius: 2em;
      margin-left:0.5em;
      margin-bottom:1em;
+     position:relative;
 }
 
 .homeimg{
@@ -152,12 +153,13 @@ blockquote{
 
 .placeholder{
   position:relative;
+  -webkit-filter:"";
 }
 
 .acdc{
   position:absolute;
-  left:12em;
-  top:6em;
-  display:none;
+  top:11.5em;
+  left:11.5em;
   z-index:1;
+  display:none;
 }
