@@ -124,23 +124,40 @@ blockquote{
 .homeplace{
      float:left;
      border: 0.2em solid #ADD8E6;
-     border-radius: 2.5em;
-     padding:0.25em;
-     margin-left:1.5em;
-     margin-bottom:1.5em;
+     border-radius: 2em;
+     margin-left:0.5em;
+     margin-bottom:1em;
 }
 
 .homeimg{
       display:inline-block;
       left:3em;
-      top:-0.5em;
-    position:relative;
+      top:-0.45em;
+      position:relative;
+      padding-top:3em;
+      padding-bottom:2em;
 }
 
 .hometext{
     display:inline-block;
-    left:-2em;
+    left:-3em;
     top:0.5em;
     position:relative;
+    font-family: Helvetica,Arial,Sans-Serif;
 }
 
+.name{
+  font-weight:bold;
+}
+
+.placeholder{
+  position:relative;
+}
+
+.acdc{
+  position:absolute;
+  left:12em;
+  top:6em;
+  display:none;
+  z-index:1;
+}

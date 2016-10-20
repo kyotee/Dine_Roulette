@@ -68,35 +68,33 @@ _END;
       
       <div class="homeplace">   
                 
+        <div class="placeholder">  
+        
+                
             <div class="homeimg">    
                 
-              <img src='/DineRoulette-tamkylet/app/images/memberPictures/$row[0].png' style='width:10em;height:10em' alt='[]' />
+              <img src='/DineRoulette-tamkylet/app/images/memberPictures/$row[0].png' style='width:5.25em;height:5.25em' alt='[]' />
           
             </div>
         
              <div class="hometext">
-                <pre>
-            
-                Username:  $row[0]      
-                Firstname: $row[1]      
-                Lastname:  $row[2]      
-                E-mail:    $row[3]   
+                <pre class="name">
+                $row[0]   
+                </pre>
                 
+                <pre>
                 Dates Attended:     $row[7]
                 Rating:             $row[8]
                 Extreme Resturants: $row[9]
                 Accomplished Dares: $row[10]
-                
                 </pre>
                </div>
                
-               <script>
-               $(".homeplace").hover(function(){
-                $(this).css("background-color", "#E0FFFF");
-                }, function(){
-                $(this).css("background-color", "");
-                });
-               </script>
+                <button class="acdc">Request Date</button>
+               
+                <script src='/DineRoulette-tamkylet/app/javascript/home.js'></script>
+               
+            </div>   
         
         </div>
                
