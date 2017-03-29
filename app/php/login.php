@@ -63,7 +63,7 @@
            else
            {
                 //under id='login' -> Username and password don't match please try again. - add restrictions
-                setcookie('mismatch', 'mismatch', time() + 20, '/');
+                setcookie('mismatch', 'mismatch', time(), '/');
            echo <<<_MSG
                 <script>
                     document.location.href = '/DineRoulette-tamkylet/index.php';

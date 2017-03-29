@@ -1,6 +1,4 @@
-* {
-    margin: 0;
-}
+
 html, body {
     height: 100%;
 }
@@ -43,7 +41,7 @@ html, body {
   position:absolute;
   text-decoration: none;
   top:1.20em;
-  right:17.25em;
+  right:20.50em;
   font-size:1.25em;
   color:white;
   font-family: Arial,Helvetica,Sans-Serif;
@@ -53,7 +51,7 @@ html, body {
   position:absolute;
   text-decoration: none;
   top:1.20em;
-  right:12em;
+  right:15em;
   font-size:1.25em;
   color:white;
   font-family: Arial,Helvetica,Sans-Serif;
@@ -78,7 +76,7 @@ html, body {
 
 .inbordermidPAD
 {
-  padding-top:1em;
+  padding-top:2em;
   padding-left:4.5em;
   padding-right:4.5em;
   padding-bottom:2em;
@@ -156,10 +154,17 @@ blockquote{
   -webkit-filter:"";
 }
 
-.acdc{
-  position:absolute;
-  top:11.5em;
-  left:11.5em;
-  z-index:1;
-  display:none;
+.resturantName{
+  color:black;
+  padding-top:0.75em;
+  font-weight:bold;
+  font-size:125%;
+}
+
+button
+{
+  background-color:#367588;
+  color:white;
+  height:2em;
+  width:10em;
 }

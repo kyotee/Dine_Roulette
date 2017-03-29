@@ -10,6 +10,10 @@ CREATE TABLE user(
     rating FLOAT,
     extremerestaurant FLOAT,
     accomplisheddares INT,
+    invitername VARCHAR(12),
+    invitation INT NOT NULL DEFAULT '0',
+    suggestedrestaurant VARCHAR(25),
+    acceptinvite INT NOT NULL DEFAULT '0',
     PRIMARY KEY (username)) ENGINE MyISAM;
 
 CREATE TABLE restaurant(

@@ -2,20 +2,6 @@
 
         require_once 'home.php';
         
-        //credentials for localserver
-        $servername = getenv('IP');
-        $username = "tamkylet";
-        $password = "password";
-        $database = "dine";
-        $dbport = 3306;
-        
-        // Create connection
-        $db = new mysqli($servername, $username, $password, $database, $dbport);
-        
-        // Check connection
-        if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
-        } 
 
         session_start();
         if ($_SESSION['userID'] != 1)
@@ -30,103 +16,36 @@ _MSG;
         else
         {}
         
-    include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletontop.html");
+        include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletontop.html");
     
     echo <<<_END
     
        <body>
-       
-       
+     
             <div class="inbordermid">
             
-            <div class="inbordermidPAD">
-                <br/>
-                <p class="titles">Member List</p>
-                </br>
+                <div class="inbordermidPAD">
+                    <br/>
+                    <p class="titles">Member List</p>
+                    </br>
 _END;
 
-            $username = $_SESSION['username'];
-            $username1 = "masteruser";
+        include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/php/classes/user.php");
 
-            $query = "SELECT * 
-                      FROM user
-                      WHERE username != '$username' && username != '$username1'";
-                      
-            $result = $db->query($query);
-            if (!$result) die ("Database access failed: " . $db->error);
+        $userSignedIn = new User($_SESSION['username']);
+        $username = $_SESSION['username'];
+  
+        if(isset($_POST['requested']))
+        {
+            $userRequested = $_POST['requested'];
             
-            $rows = $result->num_rows;
-            
-            for ($j = 0 ; $j < $rows ; ++$j)
-            {
-                $result->data_seek($j);
-                $row = $result->fetch_array(MYSQLI_NUM);
-                
-                
-                echo <<<_END1
-                
-      
-      <div class="homeplace">   
-                
-                
-        <div class="placeholder">  
-        
-            <div class="homeimg">    
-                
-              <img src='/DineRoulette-tamkylet/app/images/memberPictures/$row[0].png' style='width:5.25em;height:5.25em' alt='[]' />
-          
-            </div>
-        
-             <div class="hometext">
-                <pre class="name">
-                $row[0]   
-                </pre>
-                
-                <pre>
-                Dates Attended:     $row[7]
-                Rating:             $row[8]
-                Extreme Resturants: $row[9]
-                Accomplished Dares: $row[10]
-                </pre>
-               </div>
-               
-                <button class="acdc">Request Date</button>
-               
-            </div>   
-            
-        
-                <script src='/DineRoulette-tamkylet/app/javascript/home.js'></script>
-        
-        </div>
-               
-            
-
-_END1;
-            }
-            
-    
-            
-            $db->close();        
-
-
-                echo <<<_END2
-                
-                <br/><br/>
-                
-                
-            </div>   
-            
-            </div>
-                
-            
-       </body>
-        
-    </html>    
-        
-        
-_END2;
-
-
-
-
+            echo '<script type="text/javascript">alert("Successfully sent request to: '.$userRequested.'");</script>';  
+            $userSignedIn->requested($userRequested,$db);
+            $userSignedIn->display($db);
+_ERROR;
+        }  
+        else if($userSignedIn->invitation($username,$db) == true)
+            echo '<script>alert("Someone sent you a request!");</script>';
+        else
+            $userSignedIn->display($db);
 ?>

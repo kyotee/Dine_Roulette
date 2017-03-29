@@ -4,19 +4,6 @@ This project is remade from "DineRoulette" project ("DineRoulette" project repo:
 [ABOUT]
 Folder contains source code for DineRoulette web-based application.
 
-[DURATION OF PROJECT]
-Undetermined; applying consistency.
-Iteration 2 will commence on 2016/10/07
-Reason for break: Lack in knowledge of formal UI design principles
-Currently taking UI design course in Fall 2016 and learning vital concepts that makes good UI design
-Example: Incorporating heuristic evaluations as a quick and lower-cost way to measure and improve
-         product's usability before conducting usability tests. 
-         See "references" folder->"UsabilityInspection.pdf" for a heuristic evaluation I conducted on Lynda.com
-         Three screens evaluated:
-         https://www.lynda.com/discovery
-         https://www.lynda.com/discovery/Business/29
-         User tips screen 
-
 [DECLAIMER]
 This application is for learning purposes only. 
 Please contact me at: tamkylet@sfu.ca if any legal issues that exist.
@@ -34,6 +21,9 @@ source: http://www.hellovancity.com/lifestyle/beautiful-night-shot-of-gastown-do
 
 [ADMINISTRATOR ACCESS]
 -Username: masteruser    Password: dinerouletteA1
+
+[REGULAR USER]
+-Username: abc123abc        Password: abc123abcA1
 
 [PROBLEMS]
 Despite upgrading to PHP 5.6.27 there is a problem inserting php variables into html text

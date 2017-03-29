@@ -25,8 +25,8 @@ _MSG;
             
             <div class="inbordermidPAD">
                 <br/>
-                <p class="titles">Here's How It Works</p>
-                <br/>
+                <p class="titles">This Week's Resturants</p>
+                <blockquote class="resturantName">Resturant #1</blockquote>
                 <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
                 
                 <blockquote>
@@ -36,12 +36,7 @@ _MSG;
                          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
                          officia deserunt mollit anim id est laborum.
                 </blockquote>
-                </br>
-                
-                
-               <br/>
-                <p class="titles">How To Use Our Service</p>
-                <br/>
+                <blockquote class="resturantName">Resturant #2</blockquote>
                 <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
                 
                 <blockquote>
@@ -51,12 +46,7 @@ _MSG;
                          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
                          officia deserunt mollit anim id est laborum.
                 </blockquote>
-                <br/>
-                
-                
-               <br/>
-                <p class="titles">Suggestions To Users</p>
-                <br/>
+                <blockquote class="resturantName">Resturant #3</blockquote>
                 <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
                 
                 <blockquote>
@@ -66,7 +56,27 @@ _MSG;
                          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
                          officia deserunt mollit anim id est laborum.
                 </blockquote>
+                <blockquote class="resturantName">Resturant #4</blockquote>
+                <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
                 
+                <blockquote>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                         aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                         officia deserunt mollit anim id est laborum.
+                </blockquote>
+                <blockquote class="resturantName">Resturant #5</blockquote>
+                <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
+                
+                <blockquote>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                         aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                         officia deserunt mollit anim id est laborum.
+                </blockquote>
+                </br>     
                 
                 <br/><br/>
                 

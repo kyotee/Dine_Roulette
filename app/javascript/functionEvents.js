@@ -9,3 +9,6 @@ $(".signout").mouseout(function() { $(this).css("color", "white"); } )
 $(".home").mouseout(function() { $(this).css("color", "white"); } )
 $(".profile").mouseout(function() { $(this).css("color", "white"); } )
 $(".help").mouseout(function() {$ (this).css("color", "white"); } )
+
+
+
