@@ -15,20 +15,21 @@ _MSG;
         
     include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletontop.html");
     
-    
     echo <<<_END
     
        <body>
-       
        
             <div class="inbordermid">
             
             <div class="inbordermidPAD">
                 <br/>
-                <p class="titles">This Week's Resturants</p>
-                <blockquote class="resturantName">Resturant #1</blockquote>
-                <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
+                <p class="titles">Resturant of the Week</p>
+                <blockquote class="resturantNames">Pourhouse</blockquote>
                 
+                <div id="imgContainer">
+                    <blockquote><img src='/DineRoulette-tamkylet/app/images/pourhouse1.jpg' style='width:100%' alt='[]' /> </blockquote>
+                </div>
+
                 <blockquote>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
                          et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
@@ -36,67 +37,31 @@ _MSG;
                          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
                          officia deserunt mollit anim id est laborum.
                 </blockquote>
-                <blockquote class="resturantName">Resturant #2</blockquote>
-                <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
                 
-                <blockquote>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                         aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                         officia deserunt mollit anim id est laborum.
-                </blockquote>
-                <blockquote class="resturantName">Resturant #3</blockquote>
-                <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
-                
-                <blockquote>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                         aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                         officia deserunt mollit anim id est laborum.
-                </blockquote>
-                <blockquote class="resturantName">Resturant #4</blockquote>
-                <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
-                
-                <blockquote>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                         aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                         officia deserunt mollit anim id est laborum.
-                </blockquote>
-                <blockquote class="resturantName">Resturant #5</blockquote>
-                <blockquote><img src='/DineRoulette-tamkylet/app/images/gastown.png' style='width:25%;height:30%' alt='[]' /></blockquote>
-                
-                <blockquote>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                         aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                         officia deserunt mollit anim id est laborum.
-                </blockquote>
-                </br>     
-                
+                <br/><br/>
+_END;
+
+    echo "<blockquote>";
+    include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/API/GoogleMaps/html/googlemaps.html");
+    echo "</blockquote>";
+ 
+    echo <<<_END1
+                <blockquote>162 Water St, Vancouver, BC</blockquote>
+
                 <br/><br/>
                 
             </div>    
             
               <div class="inborderbottom">
-                </div>
+              </div>
                 
             </div>
-            
-         
             
        </body>
         
     </html>    
         
-        
-_END;
-
-
+_END1;
 
 
 ?>

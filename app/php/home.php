@@ -45,7 +45,10 @@ _END;
 _ERROR;
         }  
         else if($userSignedIn->invitation($username,$db) == true)
+        {
             echo '<script>alert("Someone sent you a request!");</script>';
+            $userSignedIn->matched();   
+        }
         else
             $userSignedIn->display($db);
 ?>

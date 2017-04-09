@@ -1,8 +1,7 @@
-[NOTE]
-This project is remade from "DineRoulette" project ("DineRoulette" project repo: 0000DineRoulette0000).
-
 [ABOUT]
 Folder contains source code for DineRoulette web-based application.
+This project serves for learning purposes only. Project fixates on implementing core functionality
+which excludes notions of creating an actual service that reflects upon current industry standards.
 
 [DECLAIMER]
 This application is for learning purposes only. 
@@ -24,8 +23,5 @@ source: http://www.hellovancity.com/lifestyle/beautiful-night-shot-of-gastown-do
 
 [REGULAR USER]
 -Username: abc123abc        Password: abc123abcA1
+-Username: abc123abc1       Password: abc123abc1A1
 
-[PROBLEMS]
-Despite upgrading to PHP 5.6.27 there is a problem inserting php variables into html text
-Needed for home.php by inserting variable into <img></img> html tag
-Possible solution: Sessions/Cookies and jQuery to write into <img> tag

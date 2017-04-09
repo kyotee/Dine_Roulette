@@ -21,7 +21,7 @@
         // Constructor - creates instance of class
         // PRE: -
         // POST: instantiated object
-        // PARAMS: $param1=username of existing logged in user
+        // PARAMS: $param1 = username of existing logged in user
     	function __construct($param1)
     	{
     		$username = $param1;
@@ -30,7 +30,7 @@
         // Destructor - deletes instance of class
         // PRE: existing object must be present
         // POST: deletes instantiated object
-        // PARAMS: &$object1=reference of object
+        // PARAMS: &$object1 = reference of object
         function __destruct()
         {
             unset($this);
@@ -40,7 +40,7 @@
         // PRE: user must be signed in
         // POST: users and associated primary information displayed; able to access 
         //       secondary information and request date
-        // PARAMS: -
+        // PARAMS: $db = database Connection
         function display($db)
         {
         
@@ -70,7 +70,7 @@
           
           <div class="homeplace">   
                     
-            <a href="/DineRoulette-tamkylet/app/php/profile.php">  
+            <a class="NoColor" href="/DineRoulette-tamkylet/app/php/profile.php">  
                     
             <div class="placeholder">  
             
@@ -129,7 +129,7 @@ _END2;
         // Request handling - user has request date with other user
         // PRE: user must be signed in
         // POST: user sucessfully sends request to other user
-        // PARAMS: - 
+        // PARAMS: $requestedUser = update credentials of user being requested; $db = database Connection
         function requested($requestedUser,$db)
         {        
             $username = $_SESSION['username'];
@@ -144,7 +144,10 @@ _END2;
             
         }
         
-        
+        // Invitation checker - check to see if current user has an invite
+        // PRE: user must be signed in
+        // POST: returns true if user has an invite; otherwise false
+        // PARAMS: $checkUser = determine if user was requested; $db = database Connection
         function invitation($checkUser,$db)
         {
             $query2 = "SELECT * 
@@ -162,7 +165,33 @@ _END2;
             else 
                 return false;
         }
+          
+        // Date confirmination - both users have agree upon date
+        // PRE:
+        // POST:
+        // PARAMS: 
+        function matched()  
+        {
             
+            
+            
+        echo <<<_END2
+        
+            <p>Hello world!</p>
+                
+                <br/><br/>
+                
+            </div>   
+            
+          </div>
+                
+            
+       </body>
+        
+    </html>    
+_END2;
+            
+        }
     }
 
 ?>

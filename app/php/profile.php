@@ -65,7 +65,8 @@ _END;
                 echo <<<_END1
                 
 <blockquote>
-
+        
+            
                 <img src='/DineRoulette-tamkylet/app/images/derp.png' style='width:10em;height:10em' alt='[]' />
                 
                 <div id="profilepic1">
@@ -84,6 +85,7 @@ _END;
                         </pre>
                         
                 </div>
+                
         
 
 </blockquote>

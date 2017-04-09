@@ -14,22 +14,23 @@ html, body {
   height:4em;
   left:0em;
   right:0em;
-  background-color:#555555;
+  background-color:#9bc2cf;
 }
 
 .msg{
   position:absolute;
-  text-decoration: none;
+  text-decoration:none;
   top:0.85em;
   left:0.85em;
   font-size:1.5em;
   color:white;
-  font-family: Arial,Helvetica,Sans-Serif;
+  font-family:Georgia,Arial,Helvetica,Sans-Serif;
+  font-style: italic;
 }
 
 .signout{
   position:absolute;
-  text-decoration: none;
+  text-decoration:none;
   top:1.20em;
   right:1.5em;
   font-size:1.25em;
@@ -39,7 +40,7 @@ html, body {
 
 .home{
   position:absolute;
-  text-decoration: none;
+  text-decoration:none;
   top:1.20em;
   right:20.50em;
   font-size:1.25em;
@@ -59,12 +60,12 @@ html, body {
 
 .help{
   position:absolute;
-  text-decoration: none;
+  text-decoration:none;
   top:1.20em;
   right:7.45em;
   font-size:1.25em;
   color:white;
-  font-family: Arial,Helvetica,Sans-Serif;
+  font-family:Arial,Helvetica,Sans-Serif;
 }
 
 .inbordermid
@@ -82,9 +83,9 @@ html, body {
   padding-bottom:2em;
 }
 .titles{
-  font-family: Arial,Helvetica,Sans-Serif;
-  font-weight: bold;
-  font-size:1.5em;
+  font-family: Calibri,Arial,Helvetica,Sans-Serif;
+  font-size:2em;
+  color:#abab9a;
 }
 
 blockquote{
@@ -97,7 +98,7 @@ blockquote{
   height:7.5em;
   left:0em;
   right:0em;
-  background-color:#555555;
+  background-color:#9bc2cf;
 }
 
 .inborderbottom1{
@@ -106,10 +107,9 @@ blockquote{
   height:7.5em;
   left:0em;
   right:0em;
-  background-color:#555555;
+  background-color:#9bc2cf;
 
 }
-
 
 #profilepic1{
   float: right;
@@ -118,10 +118,9 @@ blockquote{
   font-family: Helvetica,Arial,Sans-Serif;
 }
 
-
 .homeplace{
      float:left;
-     border: 0.2em solid #ADD8E6;
+     border: 0.2em solid #9bc2cf;
      border-radius: 2em;
      margin-left:0.5em;
      margin-bottom:1em;
@@ -140,31 +139,35 @@ blockquote{
 .hometext{
     display:inline-block;
     left:-3em;
-    top:0.5em;
     position:relative;
-    font-family: Helvetica,Arial,Sans-Serif;
+    font-family: Arial,Helvetica,Sans-Serif;
+    color:black;
 }
 
 .name{
-  font-weight:bold;
+  font-weight:bold;  
+  color:#abab9a;
 }
 
 .placeholder{
+  top:1em;
   position:relative;
   -webkit-filter:"";
 }
 
-.resturantName{
-  color:black;
+.resturantNames{
+  color:#B6C5BE;
   padding-top:0.75em;
-  font-weight:bold;
-  font-size:125%;
+  font-size:175%;
 }
 
-button
-{
+button{
   background-color:#367588;
   color:white;
   height:2em;
   width:10em;
+}
+
+.NoColor{
+  text-decoration: none;
 }
