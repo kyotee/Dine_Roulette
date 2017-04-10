@@ -66,13 +66,12 @@
                 
                     
         echo <<<_END1
-                    
           
           <div class="homeplace">   
                     
-            <a class="NoColor" href="/DineRoulette-tamkylet/app/php/profile.php">  
-                    
             <div class="placeholder">  
+            
+                <a class="NoColor" href="/DineRoulette-tamkylet/app/php/profile.php">
             
                 <div class="homeimg">    
                     
@@ -95,13 +94,11 @@
                  </div>
                    
             </div>   
-            
-            <div class="buttonContainer"> 
-                <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
-                    <input type="hidden" name="requested" value="$row[0]">
-                    <button input type="submit" value="Request Date" style="display:block; margin: 0 auto;"> <a style="text-decoration:none;">Request Date</a> </button>
-                </form>
-            </div>
+     
+            <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
+                <input type="hidden" name="requested" value="$row[0]">
+                <button input type="submit" value="Request Date" style="display:block; color:white; background-color:#008080; padding:0.25em; margin: 0 auto;">Request Date</button>
+            </form>  
      
             <script src='/DineRoulette-tamkylet/app/javascript/home.js'></script>
     
@@ -184,7 +181,6 @@ _END2;
             </div>   
             
           </div>
-                
             
        </body>
         

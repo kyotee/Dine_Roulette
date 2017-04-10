@@ -150,9 +150,17 @@ blockquote{
 }
 
 .placeholder{
-  top:1em;
+  padding-top:2em;
   position:relative;
   -webkit-filter:"";
+}
+
+.acdc{
+  position:absolute;
+  top:11.5em;
+  left:11.5em;
+  z-index:1;
+  display:none;
 }
 
 .resturantNames{
@@ -161,13 +169,12 @@ blockquote{
   font-size:175%;
 }
 
-button{
-  background-color:#367588;
-  color:white;
-  height:2em;
-  width:10em;
+.resturantNames{
+  color:#B6C5BE;
 }
 
 .NoColor{
   text-decoration: none;
 }
+
+

@@ -25,3 +25,6 @@ source: http://www.hellovancity.com/lifestyle/beautiful-night-shot-of-gastown-do
 -Username: abc123abc        Password: abc123abcA1
 -Username: abc123abc1       Password: abc123abc1A1
 
+[MERGE CONFLICT WITH GIT STASH]
+-occured on 17/04/10
+-there exists unnecessary commits under functionality branch due to fix
