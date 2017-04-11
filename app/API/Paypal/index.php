@@ -29,9 +29,16 @@
 
             <h3>Agreement to Dine</h3>
             <h4>Dinner date: $25</h4>
+            
+            <blockquote>
+                 Agree to policies! sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                 dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                 officia deserunt mollit anim id est laborum.
+            </blockquote>
 
 
-        <div class="col-md-4">
             <h3> Pricing Details </h3>
             <form action="startPayment.php" method="POST">
                  <input type="text" name="csrf" value="<?php echo($_SESSION['csrf']);?>" hidden readonly/>
@@ -80,7 +87,8 @@
                     <button class="btn btn-primary" formaction="shipping.php" role="button">Proceed to Checkout</button>
                 </div>
             </form>
-        </div>
+
+
 
     <!-- PayPal In-Context Checkout script -->
     <script type="text/javascript">
@@ -98,8 +106,8 @@
      include('footer.php');
 ?>
 
-            </div>    
-        
+          </div>
+
           <div class="inborderbottom">
           </div>
             
