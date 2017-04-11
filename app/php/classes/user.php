@@ -171,10 +171,11 @@ _END2;
         {
             
             
-            
         echo <<<_END2
         
-            <p>Hello world!</p>
+                <script>
+                    document.location.href = '/DineRoulette-tamkylet/app/API/Paypal/index.php';
+                </script>
                 
                 <br/><br/>
                 
