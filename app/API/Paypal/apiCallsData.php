@@ -69,7 +69,7 @@ $_SESSION['markFlowPaymentData'] = '{
                                     "details":{
                                        "shipping":"2",
 									   "subtotal":"300",
-									   "tax":"5",
+									   "tax":"1",
 									   "insurance":"10",
 									   "handling_fee":"5",
 									   "shipping_discount":"-2"

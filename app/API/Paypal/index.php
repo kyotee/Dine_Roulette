@@ -24,11 +24,10 @@
         
             <p class="titles">Dine meetup</p>
             <blockquote class="resturantNames">Pourhouse</blockquote>
-            <img src="/DineRoulette-tamkylet/app/images/pourhouse1.jpg" width="200" height="150"/>
-            <br/>
+            <blockquote><img src="/DineRoulette-tamkylet/app/images/pourhouse1.jpg" width="100%"/></blockquote>
 
+            </br>
             <h3>Agreement to Dine</h3>
-            <h4>Dinner date: $25</h4>
             
             <blockquote>
                  Agree to policies! sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
@@ -40,7 +39,7 @@
 
 
             <h3> Pricing Details </h3>
-            <form action="startPayment.php" method="POST">
+            <form id="paypalMid" action="startPayment.php" method="POST">
                  <input type="text" name="csrf" value="<?php echo($_SESSION['csrf']);?>" hidden readonly/>
                  <table>
                     <!-- Item Details - Actual values set in apiCallsData.php -->
@@ -78,6 +77,8 @@
                  </table>
 
                 <br/>
+                
+             
                 <!--Container for Checkout with PayPal button-->
                 <div id="myContainer"></div>
                 <br/>
@@ -86,6 +87,8 @@
                 <div>
                     <button class="btn btn-primary" formaction="shipping.php" role="button">Proceed to Checkout</button>
                 </div>
+                
+                
             </form>
 
 

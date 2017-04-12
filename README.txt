@@ -28,3 +28,7 @@ source: http://www.hellovancity.com/lifestyle/beautiful-night-shot-of-gastown-do
 [MERGE CONFLICT WITH GIT STASH]
 -occured on 17/04/10
 -there exists unnecessary commits under functionality branch due to fix
+
+[PAYPAL SANDBOX ACCOUNT]
+email: user00@gmail.com
+password: Password00
