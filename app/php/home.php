@@ -2,7 +2,6 @@
 
         require_once 'home.php';
         
-
         session_start();
         if ($_SESSION['userID'] != 1)
         {

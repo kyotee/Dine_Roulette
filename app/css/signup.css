@@ -5,7 +5,44 @@
 }
 
 #login1{
-   position:absolute;
-   top:10em;
-   left:27em; 
+
+  background: -webkit-linear-gradient(bottom, #EEEEEE, #EEEEEE 175px);
+  background: -moz-linear-gradient(bottom, #EEEEEE, #EEEEEE 175px);
+  background: linear-gradient(bottom, #EEEEEE, #EEEEEE 175px);
+  margin: auto;
+  position: relative;
+  width: 40em;
+  height: 14em;
+  padding-bottom:2em;
+  top:20em;
+  vertical-align: middle;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 24px;
+  font-weight: bold;
+  color: #09C;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid #999;
+  border: inset 1px solid #333;
+}
+
+table {
+  width: 100%;
+}
+td {
+  text-align: center;
+}
+form {
+  display: inline-block;
+}
+
+#login{
+   text-align: center;
+}
+
+#link
+{
+   text-align: center;
 }

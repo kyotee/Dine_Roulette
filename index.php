@@ -139,29 +139,32 @@ _END;
              
                 <div id="login1">
                   <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee" width="400">
+                
                     <th colspan="2" align="center">DineRoulette</th>
         
-                  <form method="post" action="/DineRoulette-tamkylet/app/php/login.php" onSubmit="return validate1(this)">
                     <br>
+                  <form method="post" action="/DineRoulette-tamkylet/app/php/login.php" onSubmit="return validate1(this)">
                     <tr>
                         <td id='login'></td>
                     </tr>
                     <br>
                     <tr>
-                        <td>Username</td>
-                        <td><input type="text" maxlength="12" name="username"></td>
+                        <td>Username <input type="text" maxlength="12" name="username"></td>
                     </tr>
                     <tr>
-                        <td>Password</td>
-                        <td><input type="password" maxlength="20" name="password"></td>
+                        <td>Password <input type="password" maxlength="20" name="password"></td>
                     </tr>
                     <tr>
                         <td colspan="2" align="center"><input type="submit" value="Login"></td>
                     </tr>
+                    <tr><td></td></tr>
+                    <tr><td></td></tr>                    
+                    <tr>
+                        <td><button id="link">Register</button></td>
+                    </tr>
                 </form>
                 </table>    
                 
-                <button id="link">Register</button>
                 <script>
                     $('#link').click( function() { $("#signup1").show(); $("#login1").hide(); });
                 </script>
