@@ -1,11 +1,4 @@
-#signup1{
-   position:absolute;
-   top:10em;
-   left:27em; 
-}
-
-#login1{
-
+#login1,#signup1{
   background: -webkit-linear-gradient(bottom, #EEEEEE, #EEEEEE 175px);
   background: -moz-linear-gradient(bottom, #EEEEEE, #EEEEEE 175px);
   background: linear-gradient(bottom, #EEEEEE, #EEEEEE 175px);
