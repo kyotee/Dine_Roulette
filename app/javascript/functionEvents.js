@@ -11,4 +11,19 @@ $(".profile").mouseout(function() { $(this).css("color", "white"); } )
 $(".help").mouseout(function() {$ (this).css("color", "white"); } )
 
 
+// AJAX calls
+$(document).ready(function(){
+    $(".profile").click(function(){
+        $.ajax({url: "/DineRoulette-tamkylet/app/php/profile.php", success: function(result){
+            $("#AJAX").html(result);
+        }});
+    });
+});
 
+$(document).ready(function(){
+    $(".help").click(function(){
+        $.ajax({url: "/DineRoulette-tamkylet/app/php/help.php", success: function(result){
+            $("#AJAX").html(result);
+        }});
+    });
+});

@@ -15,6 +15,15 @@ _MSG;
         
     include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletontop.html");
     
+    
+    
+    $xmldata = simplexml_load_file('/home/ubuntu/workspace/DineRoulette-tamkylet/app/API/GoogleMaps/restaurantList.xml');
+    $random = array_rand($xmldata->xpath("resturant"), 1);
+    $item = $xmldata->resturant[$random];
+    echo $item->address;
+    
+
+    
     echo <<<_END
     
        <body>
@@ -23,12 +32,14 @@ _MSG;
             
             <div class="inbordermidPAD">
                 <br/>
-
+                
+                <p>$resturant->name</p>
+                
                 <p class="titles">Resturant of the Week</p>
-                <blockquote class="resturantNames">Pourhouse</blockquote>
+                <blockquote class="resturantNames">Restaurant 1</blockquote>
                 
                 <div id="imgContainer">
-                    <blockquote><img src='/DineRoulette-tamkylet/app/images/pourhouse1.jpg' style='width:100%' alt='[]' /> </blockquote>
+                    <blockquote><img src='/DineRoulette-tamkylet/app/images/12345dinnerTable.png' style='width:100%' alt='[]' /> </blockquote>
                 </div>
 
                 <blockquote>

@@ -95,7 +95,7 @@
                    
             </div>   
      
-            <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
+            <form class="requesting" method="post" action="/DineRoulette-tamkylet/app/php/home.php">
                 <input type="hidden" name="requested" value="$row[0]">
                 <button input type="submit" value="Request Date" style="display:block; color:white; background-color:#008080; padding:0.25em; margin: 0 auto;">Request Date</button>
             </form>  

@@ -23,8 +23,8 @@
         <br/>
         
             <p class="titles">Dine meetup</p>
-            <blockquote class="resturantNames">Pourhouse</blockquote>
-            <blockquote><img src="/DineRoulette-tamkylet/app/images/pourhouse1.jpg" width="100%"/></blockquote>
+            <blockquote class="resturantNames">Restaurant 1</blockquote>
+            <blockquote><img src="/DineRoulette-tamkylet/app/images/12345dinnerTable.png" width="100%"/></blockquote>
 
             </br>
             <h3>Agreement to Dine</h3>

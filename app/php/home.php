@@ -42,7 +42,6 @@ _END;
             echo '<script type="text/javascript">alert("Successfully sent request to: '.$userRequested.'");</script>';  
             $userSignedIn->requested($userRequested,$db);
             $userSignedIn->display($db);
-_ERROR;
         }  
         else if($userSignedIn->invitation($username,$db) == true)
         {

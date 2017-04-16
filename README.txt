@@ -15,8 +15,10 @@ Please contact me at: tamkylet@sfu.ca if any legal issues that exist.
 -dines table created in dine DB  //2016-09-04 5:48pm
 
 [IMAGE REFERENCE]
-/DineRoulette-tamkylet/app/images/gastown.png
+/DineRoulette-tamkylet/app/images/12345gastown.png
 source: http://www.hellovancity.com/lifestyle/beautiful-night-shot-of-gastown-downtown-vancouver-photo/
+/DineRoulette-tamkylet/app/images/12345dinnerTable.png (...12345dinnerTable1.png,...12345dinnerTable2.png,...12345dinnerTable3.png,...12345dinnerTable4.png)
+source: https://www.pexels.com/photo/restaurant-bottles-dinner-lunch-66640/
 
 [ADMINISTRATOR ACCESS]
 -Username: masteruser    Password: dinerouletteA1
