@@ -4,6 +4,8 @@
     */
     if (session_id() == "")
         session_start();
+        
+        $_SESSION['userID'];
 
     include('utilFunctions.php');
     include('paypalFunctions.php');
@@ -78,11 +80,19 @@
                 Total Amount: <?php echo($finalAmount);?> &nbsp;  <?php echo($currency);?> <br/>
             </h4>
             <br/>
+            
+            <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
+                <input type="hidden" name="Paypal" value="paid">
+                <button input type="submit" value="PaypalPay">Return back to home page.</button>
+            </form>  
+            
             Return to <a href="index.php">home page</a>.
         </div>
         <div class="col-md-4"></div>
     </div>
+    
 <?php
+
     if (session_id() !== "") {
                session_unset();
                session_destroy();

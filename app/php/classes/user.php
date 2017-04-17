@@ -189,6 +189,18 @@ _END2;
 _END2;
             
         }
+        
+        // Request handling - user has request date with other user
+        // PRE: user must be signed in
+        // POST: user sucessfully sends request to other user
+        // PARAMS: $requestedUser = update credentials of user being requested; $db = database Connection
+        function paid($db)
+        {
+            echo '<script>alert("Hello");</script>';
+        }
+        
+        
+        
     }
 
 ?>

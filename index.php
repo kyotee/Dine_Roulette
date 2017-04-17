@@ -65,35 +65,31 @@ _END;
             <body>
             
                 <div id="signup1" style="display:none">
+                <br>
+                <p id="diningLogin">DineRoulette</p>
                 
-                  <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee" width="400">
-                    <th colspan="2" align="center">DineRoulette</th>
+                  <table border="0" cellpadding="2" cellspacing="5" width="400">
 
                   <form method="post" action="/DineRoulette-tamkylet/app/php/registration.php" onSubmit="return validate(this)">
-                    <br>
+
                     <tr>
                         <td id='signup'></td>
                     </tr>
                     <br>
                     <tr>
-                        <td>Username</td>
-                        <td><input type="text" maxlength="12" name="username"></td>
+                        <td>Username <input type="text" maxlength="12" name="username"></td>
                     </tr>
                     <tr>
-                        <td>First Name</td>
-                        <td><input type="text" maxlength="12" name="firstname"></td>
+                        <td>First Name <input type="text" maxlength="12" name="firstname"></td>
                     </tr>
                     <tr>
-                        <td>Last Name</td>
-                        <td><input type="text" maxlength="12" name="lastname"></td>
+                        <td>Last Name <input type="text" maxlength="12" name="lastname"></td>
                     </tr>
                     <tr>
-                        <td>E-mail</td>
-                        <td><input type="text" maxlength="40" name="email"></td>
+                        <td>E-mail <input type="text" maxlength="40" name="email"></td>
                     </tr>
                     <tr>
-                        <td>Password</td>
-                        <td><input type="password" maxlength="20" name="password"></td>
+                        <td>Password <input type="password" maxlength="20" name="password"></td>
                     </tr>
                     <tr>
                         <td colspan="2" align="center"><input type="submit" value="Signup"></td>
@@ -138,16 +134,15 @@ _END;
     echo <<<_END1
              
                 <div id="login1">
-                  <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee" width="400">
+                <br>
+                <p id="diningLogin">DineRoulette</p>
                 
-                    <th colspan="2" align="center">DineRoulette</th>
-        
-                    <br>
+                  <table border="0" cellpadding="2" cellspacing="5" width="400">
+
                   <form method="post" action="/DineRoulette-tamkylet/app/php/login.php" onSubmit="return validate1(this)">
                     <tr>
                         <td id='login'></td>
                     </tr>
-                    <br>
                     <tr>
                         <td>Username <input type="text" maxlength="12" name="username"></td>
                     </tr>

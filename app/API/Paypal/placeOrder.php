@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h3>Ship To :</h3>
+            <h3>Confirm Payment :</h3>
             <?php echo($recipientName);?><br/>
             <?php echo($addressLine1);?><br/>
             <?php echo($addressLine2);?><br/>
@@ -35,19 +35,6 @@
 
             <form action="pay.php" method="POST">
                 <input type="text" name="csrf" value="<?php echo($_SESSION['csrf']);?>" hidden readonly/>
-                <label>Shipping methods:</label>
-                <select class="form-control" name="shipping_method" id="shipping_method" style="width: 250px;" class="required-entry">
-                    <optgroup label="United Parcel Service" style="font-style:normal;">
-                        <option value="8.00">
-                        Worldwide Expedited - 8.00</option>
-                        <option value="4.00">
-                        Worldwide Express Saver - 4.00</option>
-                    </optgroup>
-                    <optgroup label="Flat Rate" style="font-style:normal;">
-                        <option value="2.00" selected>
-                        Fixed - 2.00</option>
-                    </optgroup>
-                </select>
                 <br/>
                 <button type="submit" class="btn btn-primary">Confirm Order</button>
             </form>

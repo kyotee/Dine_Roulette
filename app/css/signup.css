@@ -1,13 +1,11 @@
 #login1,#signup1{
-  background: -webkit-linear-gradient(bottom, #EEEEEE, #EEEEEE 175px);
-  background: -moz-linear-gradient(bottom, #EEEEEE, #EEEEEE 175px);
-  background: linear-gradient(bottom, #EEEEEE, #EEEEEE 175px);
+
   margin: auto;
   position: relative;
   width: 40em;
-  height: 14em;
+  height: 20em;
   padding-bottom:2em;
-  top:20em;
+  top:14em;
   vertical-align: middle;
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 14px;
@@ -17,8 +15,9 @@
   color: #09C;
   text-decoration: none;
   border-radius: 10px;
-  border: 1px solid #999;
+  border: 0.25em solid #ffff00;
   border: inset 1px solid #333;
+  background-color: rgba(0, 0, 255, 0.1);
 }
 
 table {
@@ -38,4 +37,9 @@ form {
 #link
 {
    text-align: center;
+}
+
+#diningLogin{
+  text-align: center;
+  font-size: 200%;
 }
