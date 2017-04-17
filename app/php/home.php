@@ -34,7 +34,12 @@ _END;
         $userSignedIn = new User($_SESSION['username']);
         $username = $_SESSION['username'];
   
-        if(isset($_POST['requested']))
+        if (isset($_POST['Paypal']))
+        {
+            $userSignedIn->paid($db);
+            $userSignedIn->display($db);
+        }
+        else if(isset($_POST['requested']))
         {
             $userRequested = $_POST['requested'];
             

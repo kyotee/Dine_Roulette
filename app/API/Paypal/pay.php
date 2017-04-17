@@ -5,6 +5,7 @@
     if (session_id() == "")
         session_start();
         
+    session_start();
         
     include('utilFunctions.php');
     include('paypalFunctions.php');
@@ -59,6 +60,7 @@
     $countryCode= filter_var($json_response['payer']['payer_info']['shipping_address']['country_code'],FILTER_SANITIZE_SPECIAL_CHARS);
 	
     include('header.php');
+    
 ?>
     <div class="row">
         <div class="col-md-4"></div>
@@ -80,22 +82,16 @@
             </h4>
             <br/>
             
-            <form method="post" action="/DineRoulette-tamkylet/app/php/login.php">
+            <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
                 <input type="hidden" name="Paypal" value="paid">
                 <button input type="submit" value="PaypalPay">Return back to home page.</button>
             </form>  
-            
-            Return to <a href="index.php">home page</a>.
+
         </div>
         <div class="col-md-4"></div>
     </div>
     
 <?php
-
-    if (session_id() !== "") {
-               session_unset();
-               session_destroy();
-            }
     include('footer.php');
 ?>
 
