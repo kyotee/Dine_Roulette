@@ -5,8 +5,7 @@
     if (session_id() == "")
         session_start();
         
-        $_SESSION['userID'];
-
+        
     include('utilFunctions.php');
     include('paypalFunctions.php');
 
@@ -81,7 +80,7 @@
             </h4>
             <br/>
             
-            <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
+            <form method="post" action="/DineRoulette-tamkylet/app/php/login.php">
                 <input type="hidden" name="Paypal" value="paid">
                 <button input type="submit" value="PaypalPay">Return back to home page.</button>
             </form>  

@@ -4,15 +4,17 @@
     include('header.php');
     include('paypalConfig.php');
     
+    session_start();
+    
     include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletontop.html");
     
-
     //setting the environment for Checkout script
     if(SANDBOX_FLAG) {
         $environment = SANDBOX_ENV;
     } else {
         $environment = LIVE_ENV;
     }
+    
 ?>
 
    <body>

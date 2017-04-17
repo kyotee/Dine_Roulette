@@ -2,9 +2,12 @@
     /*
         * Place Order Page : part of the Express Checkout flow. Buyer can choose shipping option on this page.
     */
+
     if (session_id() == "")
         session_start();
-
+    
+    session_start();
+    
     include('header.php');
     include('utilFunctions.php');
     include('paypalFunctions.php');

@@ -1,8 +1,8 @@
 <?php
 
         require_once 'home.php';
-        
         session_start();
+        
         if ($_SESSION['userID'] != 1)
         {
                 
@@ -49,4 +49,5 @@ _END;
         }
         else
             $userSignedIn->display($db);
+
 ?>

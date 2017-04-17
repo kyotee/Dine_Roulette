@@ -1,9 +1,6 @@
 <?php
 
-if (session_id() !== "") {
-       session_unset();
-       session_destroy();
-    }
+
     session_start();
     $_SESSION['csrf'] = bin2hex(openssl_random_pseudo_bytes(32));
 /*

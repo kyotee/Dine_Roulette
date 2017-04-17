@@ -4,6 +4,7 @@
 	*/
 	if (session_id() == "")
 		session_start();
+		
 
 	include('utilFunctions.php');
 	include('paypalFunctions.php');

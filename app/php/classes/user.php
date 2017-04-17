@@ -169,8 +169,7 @@ _END2;
         // PARAMS: 
         function matched()  
         {
-            
-            
+
         echo <<<_END2
         
                 <script>
