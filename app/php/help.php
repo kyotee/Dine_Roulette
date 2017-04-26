@@ -32,7 +32,7 @@ _MSG;
                 
                 <p>$resturant->name</p>
                 
-                <p class="titles">Resturant of the Week</p>
+                <p class="titles">restaurant of the Week</p>
                 <blockquote class="resturantNames">$item->name</blockquote>
                 
                 <div id="imgContainer">

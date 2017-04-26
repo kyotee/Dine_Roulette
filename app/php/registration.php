@@ -53,8 +53,8 @@ _ERROR;
             $token = hash('ripemd128',"$salt1$password$salt2");
             
             //database insertion happens here
-            $query = "INSERT INTO user(username,firstname,lastname,email,password,active,datejoined,datesattended,rating,extremerestaurant,accomplisheddares)
-               VALUES('$username','$firstname','$lastname','$email','$token','1','2016-08-05','1','1.0','1.0','1')";
+            $query = "INSERT INTO user(username,firstname,lastname,email,password,active,datejoined,datesattended,rating)
+               VALUES('$username','$firstname','$lastname','$email','$token','1','2016-08-05','0','0')";
             
             $result = $db->query($query);
             if (!$result) die ("Database access failed." . $db->error);   

@@ -3,17 +3,14 @@ CREATE TABLE user(
     firstname VARCHAR(12),
     lastname VARCHAR(12),
     email VARCHAR(40),
-    password VARCHAR(50),
+    password VARCHAR(50), /*Verifyemail*/
     active INT NOT NULL DEFAULT '0',
     datejoined DATE, 
     datesattended INT, 
     rating FLOAT,
-    extremerestaurant FLOAT,
-    accomplisheddares INT,
     invitername VARCHAR(12),
     invitation INT NOT NULL DEFAULT '0',
     suggestedrestaurant VARCHAR(25),
-    acceptinvite INT NOT NULL DEFAULT '0',
     PRIMARY KEY (username)) ENGINE MyISAM;
 
 CREATE TABLE restaurant(
@@ -21,11 +18,9 @@ CREATE TABLE restaurant(
     id INT NOT NULL AUTO_INCREMENT,
     username2 VARCHAR(12),
     restaurantname VARCHAR(25),
-    dateofmeet DATETIME,
+    commentsforusername1 VARCHAR(50),
     paid INT NOT NULL DEFAULT '0',
-    ratingforusername2 FLOAT,
-    excitingrestaurant FLOAT,
-    dareforusername2 VARCHAR(150),
+    ratingforusername1 INT (11),
     PRIMARY KEY (username1,id)) ENGINE MyISAM;    
 
 CREATE TABLE dines(

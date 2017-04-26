@@ -83,12 +83,9 @@
                     <pre class="name">
                     $row[0]   
                     </pre>
-                    
                     <pre>
                     Dates Attended:     $row[7]
                     Rating:             $row[8]
-                    Extreme Resturants: $row[9]
-                    Accomplished Dares: $row[10]
                     </pre>
                     
                  </div>
@@ -130,12 +127,15 @@ _END2;
         function requested($requestedUser,$db)
         {        
             $username = $_SESSION['username'];
-            
+
+            $a = array("resturant1","resturant2","resturant3","resturant4");
+            $resturant = $a[array_rand($a)];
+
             //update user datebase to reflect on request
             $query1 = "UPDATE user
-                       SET invitername = '$username', invitation = '1', suggestedrestaurant = 'Chipotle'
+                       SET invitername = '$username', invitation = '1', suggestedrestaurant = '$resturant'
                        WHERE username = '$requestedUser'";
-            
+
             $result1 = $db->query($query1);
             if (!$result1) die ("Database access failed." . $db->error);  
             
