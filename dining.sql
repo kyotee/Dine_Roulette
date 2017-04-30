@@ -27,8 +27,9 @@ CREATE TABLE restaurant(
 CREATE TABLE dines(
     username VARCHAR(12),
     username1 VARCHAR(12),
-    PRIMARY KEY (username,username1),
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (username,username1,id),
     FOREIGN KEY (username)
          REFERENCES user,
-    FOREIGN KEY (username1)
+    FOREIGN KEY (username1,id)
          REFERENCES restaurant) ENGINE MyISAM;

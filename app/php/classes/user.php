@@ -220,16 +220,18 @@ _END2;
 
             $result3 = $db->query($query3);   
             if (!$result3) die("Database access failed.");
-
+        }
+        
+        function updatePaid($db,$username)
+        {
             $inviter = $_SESSION['inviterName'];
             $restaurant = $_SESSION['suggestedrestaurant'];
 
-            $query4 = "INSERT INTO restaurant(username1,username2,restaurantname,paid,seen)
-               VALUES('$username','$inviter','$restaurant','1','0')";
+            $query4 = "INSERT INTO restaurant(username1,username2,restaurantname,paid)
+               VALUES('$username','$inviter','$restaurant','1')";
 
             $result4 = $db->query($query4);
-            if (!$result) die ("Database access failed1." . $db->error);   
-            
+            if (!$result4) die("Database access failed.");  
         }
     }
 

@@ -91,6 +91,7 @@
                 $loggedInUser = $_SESSION['username'];
                 $userSignedIn = new User($loggedInUser);
                 $userSignedIn->paypalPaid($db,$loggedInUser);
+                $userSignedIn->updatePaid($db,$loggedInUser);
                 $inviterEmail = $_SESSION['inviterEmail'];
                 echo "<script>alert('Email has been sent to inviter to pay their fee.');</script>";
 
