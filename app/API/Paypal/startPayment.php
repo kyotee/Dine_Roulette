@@ -30,15 +30,15 @@
         	} else { //Express checkout flow
 
         		$expressCheckoutArray = json_decode($_SESSION['expressCheckoutPaymentData'], true);
-        		$expressCheckoutArray['transactions'][0]['amount']['details']['subtotal'] = $_POST['camera_amount'];
-        		$expressCheckoutArray['transactions'][0]['item_list']['items'][0]['price'] = $_POST['camera_amount'];
+        		$expressCheckoutArray['transactions'][0]['amount']['details']['subtotal'] = $_POST['fee'];
+        		$expressCheckoutArray['transactions'][0]['item_list']['items'][0]['price'] = $_POST['fee'];
         		$expressCheckoutArray['transactions'][0]['item_list']['items'][0]['currency'] = $_POST['currencyCodeType'];
         		$expressCheckoutArray['transactions'][0]['amount']['details']['tax'] = $_POST['tax'];
         		$expressCheckoutArray['transactions'][0]['amount']['details']['insurance'] = $_POST['insurance'];
         		$expressCheckoutArray['transactions'][0]['amount']['details']['shipping'] = $_POST['estimated_shipping'];
         		$expressCheckoutArray['transactions'][0]['amount']['details']['handling_fee'] = $_POST['handling_fee'];
         		$expressCheckoutArray['transactions'][0]['amount']['details']['shipping_discount'] = $_POST['shipping_discount'];
-        		$expressCheckoutArray['transactions'][0]['amount']['total'] = (float)$_POST['camera_amount'] + (float)$_POST['estimated_shipping'] + (float)$_POST['tax'] + (float)$_POST['insurance'] + (float)$_POST['handling_fee'] + (float)$_POST['shipping_discount'];
+        		$expressCheckoutArray['transactions'][0]['amount']['total'] = (float)$_POST['fee'] + (float)$_POST['estimated_shipping'] + (float)$_POST['tax'] + (float)$_POST['insurance'] + (float)$_POST['handling_fee'] + (float)$_POST['shipping_discount'];
         		$expressCheckoutArray['transactions'][0]['amount']['currency'] = $_POST['currencyCodeType'];
 
         		$_SESSION['expressCheckoutPaymentData'] = json_encode($expressCheckoutArray);

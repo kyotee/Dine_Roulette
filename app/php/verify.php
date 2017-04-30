@@ -21,7 +21,7 @@
     {
         $emailtemp = $_GET['email'];
        
-        $query1 = "UPDATE user SET active='1' 
+        $query1 = "UPDATE user SET active='1'
                    WHERE email='".$emailtemp."' AND active='0'";
                 
         $result1 = $db1->query($query1);   
