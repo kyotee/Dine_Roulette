@@ -6,6 +6,50 @@
     
     session_start();
     
+    //credentials for localserver
+    $servername = getenv('IP');
+    $username = "tamkylet";
+    $password = "password";
+    $database = "dine";
+    $dbport = 3306;
+    session_start();
+    
+    // Create connection
+    $db = new mysqli($servername, $username, $password, $database, $dbport);
+    
+    // Check connection
+    if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+    } 
+
+    $userSignedIn = $_SESSION['username'];
+
+    $query1 = "SELECT *
+               FROM user
+               WHERE username = '$userSignedIn'";
+              
+    $result1 = $db->query($query1);
+        if (!$result1) die ("Database access failed." . $db->error);  
+    
+    $row = $result1->fetch_assoc();
+    
+    $inviterName = $row["invitername"];
+    $suggestRest = $row["suggestedrestaurant"];
+
+    $xmldata = simplexml_load_file('/home/ubuntu/workspace/DineRoulette-tamkylet/app/API/GoogleMaps/restaurantList.xml');
+    $item = $xmldata->xpath("resturant[@name = $suggestRest");
+    $test = $item->name;
+
+    echo "<script>alert('$test');</script>";
+    
+    $suggestImg = (string)$item->resturant->image;
+    $suggestDesc = (string)$item->resturant->description;
+    $suggestAddress = (string)$item->resturant->address;
+    
+
+    //resturant information
+    //user information
+
     include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletontop.html");
     
     //setting the environment for Checkout script
@@ -14,23 +58,25 @@
     } else {
         $environment = LIVE_ENV;
     }
-    
-?>
 
+    echo <<<_END
+    
    <body>
    
-        <div class="inbordermid">
-        
-        <div class="inbordermidPAD">
-        <br/>
-        
-            <p class="titles">Dine meetup</p>
-            <blockquote class="resturantNames">Restaurant 1</blockquote>
-            <blockquote><img src="/DineRoulette-tamkylet/app/images/12345dinnerTable.png" width="100%"/></blockquote>
+            <div class="inbordermid">
+            
+            <div class="inbordermidPAD">
+            <br/>
+            
+                <p class="titles">Dine meetup</p>
+                <blockquote class="resturantNames">$suggestRest</blockquote>
+                <blockquote><img src="/DineRoulette-tamkylet/app/images/12345dinnerTable.png" width="100%"/></blockquote>
+_END;
 
+?>
             </br>
             <h3>Agreement to Dine</h3>
-            
+
             <blockquote>
                  Agree to policies! sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
@@ -38,7 +84,6 @@
                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
                  officia deserunt mollit anim id est laborum.
             </blockquote>
-
 
             <h3> Pricing Details </h3>
             <form id="paypalMid" action="startPayment.php" method="POST">

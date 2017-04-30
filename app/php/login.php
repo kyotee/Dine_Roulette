@@ -58,6 +58,15 @@
                     session_start();
                     $_SESSION['userID'] = 1;
                     $_SESSION['username'] = $checkusername;
+                    
+                    $xmldata = simplexml_load_file('/home/ubuntu/workspace/DineRoulette-tamkylet/app/API/GoogleMaps/restaurantList.xml');
+                    $random = array_rand($xmldata->xpath("resturant"), 1);
+                    $item = $xmldata->resturant[$random];
+                    $_SESSION['restaurant1'] = (string)$item->name;
+                    $_SESSION['restaurant2'] = (string)$item->image;
+                    $_SESSION['restaurant3'] = (string)$item->description;
+                    $_SESSION['restaurant4'] = (string)$item->address;
+                    
                     echo "<script>document.location.href = '/DineRoulette-tamkylet/app/php/home.php';</script> "; 
            }
            else

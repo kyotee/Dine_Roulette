@@ -6,6 +6,7 @@
     $password = "password";
     $database = "dine";
     $dbport = 3306;
+    session_start();
     
     // Create connection
     $db = new mysqli($servername, $username, $password, $database, $dbport);
@@ -125,15 +126,13 @@ _END2;
         // POST: user sucessfully sends request to other user
         // PARAMS: $requestedUser = update credentials of user being requested; $db = database Connection
         function requested($requestedUser,$db)
-        {        
+        {
             $username = $_SESSION['username'];
-
-            $a = array("resturant1","resturant2","resturant3","resturant4");
-            $resturant = $a[array_rand($a)];
+            $restName = $_SESSION['restaurant1'];
 
             //update user datebase to reflect on request
             $query1 = "UPDATE user
-                       SET invitername = '$username', invitation = '1', suggestedrestaurant = '$resturant'
+                       SET invitername = '$username', invitation = '1', suggestedrestaurant = '$restName'
                        WHERE username = '$requestedUser'";
 
             $result1 = $db->query($query1);
@@ -147,17 +146,16 @@ _END2;
         // PARAMS: $checkUser = determine if user was requested; $db = database Connection
         function invitation($checkUser,$db)
         {
-            $query2 = "SELECT * 
+            $query2 = "SELECT invitation
                        FROM user
                        WHERE username = '$checkUser'";
                       
             $result2 = $db->query($query2);
                 if (!$result2) die ("Database access failed." . $db->error);  
             
-            $result2->data_seek(0);
-            $row = $result2->fetch_array(MYSQLI_NUM);
+            $row = $result2->fetch_assoc();
             
-            if ($row[12] == '1')
+            if ($row["invitation"] == '1')
                 return true;
             else 
                 return false;

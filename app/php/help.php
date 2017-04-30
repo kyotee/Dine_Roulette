@@ -14,12 +14,12 @@ _MSG;
         {}
         
     include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletontop.html");
-    
-    
-    
-    $xmldata = simplexml_load_file('/home/ubuntu/workspace/DineRoulette-tamkylet/app/API/GoogleMaps/restaurantList.xml');
-    $random = array_rand($xmldata->xpath("resturant"), 1);
-    $item = $xmldata->resturant[$random];
+
+    session_start();
+    $restName = $_SESSION['restaurant1'];
+    $restImg = $_SESSION['restaurant2'];
+    $restDesc = $_SESSION['restaurant3'];
+    $restAddress = $_SESSION['restaurant4'];
     
     echo <<<_END
     
@@ -33,18 +33,18 @@ _MSG;
                 <p>$resturant->name</p>
                 
                 <p class="titles">restaurant of the Week</p>
-                <blockquote class="resturantNames">$item->name</blockquote>
+                <blockquote class="resturantNames">$restName</blockquote>
                 
                 <div id="imgContainer">
 _END;
 
-                echo "<blockquote><img src='/DineRoulette-tamkylet/app/images/".$item->image.".png' style='width:100%' alt='[]' /> </blockquote>";
+                echo "<blockquote><img src='/DineRoulette-tamkylet/app/images/".$restImg.".png' style='width:100%' alt='[]' /> </blockquote>";
 
     echo <<<_END1
                 </div>
 
                 <blockquote>
-                    $item->description;
+                    $restDesc;
                 </blockquote>
                 
                 <br/><br/>
@@ -55,7 +55,7 @@ _END1;
     echo "</blockquote>";
  
     echo <<<_END1
-                <blockquote>$item->address</blockquote>
+                <blockquote>$restAddress</blockquote>
 
                 <br/><br/>
                 
