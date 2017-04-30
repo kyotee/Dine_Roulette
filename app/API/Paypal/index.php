@@ -35,6 +35,22 @@
     
     $inviterName = $row["invitername"];
     $suggestRest = $row["suggestedrestaurant"];
+    
+    $_SESSION['inviterName'] = $inviterName;
+    $_SESSION['suggestedrestaurant'] = $suggestRest;
+
+    $query2 = "SELECT *
+               FROM user
+               WHERE username = '$inviterName'";
+              
+    $result2 = $db->query($query2);
+        if (!$result1) die ("Database access failed." . $db->error);  
+    
+    $row1 = $result2->fetch_assoc();
+    
+    $inviterEmail = $row1["email"];
+    
+    $_SESSION['inviterEmail'] = $inviterEmail;
 
     $xmldata = simplexml_load_file('/home/ubuntu/workspace/DineRoulette-tamkylet/app/API/GoogleMaps/restaurantList.xml');
   
@@ -102,18 +118,11 @@ _END;
                  </table>
 
                 <br/>
-                
-             
+
                 <!--Container for Checkout with PayPal button-->
                 <div id="myContainer"></div>
                 <br/>
-                <span style="margin-left:60px">OR</span>
-                <br/><br/>
-                <div>
-                    <button class="btn btn-primary" formaction="shipping.php" role="button">Proceed to Checkout</button>
-                </div>
-                
-                
+
             </form>
 
 

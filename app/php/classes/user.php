@@ -206,7 +206,30 @@ _END2;
                        WHERE username='".$username."'";
 
             $result3 = $db->query($query3);   
-            if (!$result3) die("Account has already been verified, please login.");    
+            if (!$result3) die("Database access failed.");    
+        }
+        
+        // Paid - user paid with Paypal
+        // PRE: user must be signed in
+        // POST: Paypal deducts $20 from user account
+        // PARAMS: $username = user who wants to reject date; $db = database Connection
+        function paypalPaid($db,$username)
+        {
+            $query3 = "UPDATE user SET invitation='0'
+                       WHERE username='".$username."'";
+
+            $result3 = $db->query($query3);   
+            if (!$result3) die("Database access failed.");
+
+            $inviter = $_SESSION['inviterName'];
+            $restaurant = $_SESSION['suggestedrestaurant'];
+
+            $query4 = "INSERT INTO restaurant(username1,username2,restaurantname,paid,seen)
+               VALUES('$username','$inviter','$restaurant','1','0')";
+
+            $result4 = $db->query($query4);
+            if (!$result) die ("Database access failed1." . $db->error);   
+            
         }
     }
 

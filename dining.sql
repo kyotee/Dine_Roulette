@@ -21,6 +21,7 @@ CREATE TABLE restaurant(
     commentsforusername1 VARCHAR(50),
     paid INT NOT NULL DEFAULT '0',
     ratingforusername1 INT (11),
+    seen INT NOT NULL DEFAULT '0',
     PRIMARY KEY (username1,id)) ENGINE MyISAM;    
 
 CREATE TABLE dines(

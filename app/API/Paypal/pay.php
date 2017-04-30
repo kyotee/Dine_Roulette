@@ -81,9 +81,44 @@
                 Total Amount: <?php echo($finalAmount);?> &nbsp;  <?php echo($currency);?> <br/>
             </h4>
             <br/>
+    
+    
+    
+            
+            <?php
+                include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/php/classes/user.php");
+            
+                $loggedInUser = $_SESSION['username'];
+                $userSignedIn = new User($loggedInUser);
+                $userSignedIn->paypalPaid($db,$loggedInUser);
+                $inviterEmail = $_SESSION['inviterEmail'];
+                echo "<script>alert('Email has been sent to inviter to pay their fee.');</script>";
+
+                //-------------------------------Notification email --------------------------------------------
+                //verification email used only when deployment server is created
+                //...right now we will assume every signup was verified => active set to '1'
+                
+                $inviter = $_SESSION['inviterName'];
+                
+                $to      = $inviterEmail;
+                $subject = 'DineRoulette | Date Notification';
+                $message = '
+                 
+                Hello '.$inviter.'! 
+                
+                '.$loggedInUser.' has accepted your invitation. 
+                
+                Please login to DineRoulette and pay the fixed fee to finalize the date.
+
+                ';
+                
+                $headers = 'From:noreply@radiant-taiga-47474.herokuapp.com' . "\r\n"; // Set from headers
+                mail($to, $subject, $message, $headers); // Send our email
+
+                
+            ?>
             
             <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
-                <input type="hidden" name="Paypal" value="paid">
                 <button input type="submit" value="PaypalPay">Return back to home page.</button>
             </form>  
 
