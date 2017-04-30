@@ -37,18 +37,16 @@
     $suggestRest = $row["suggestedrestaurant"];
 
     $xmldata = simplexml_load_file('/home/ubuntu/workspace/DineRoulette-tamkylet/app/API/GoogleMaps/restaurantList.xml');
-    $item = $xmldata->xpath("resturant[@name = $suggestRest");
-    $test = $item->name;
-
-    echo "<script>alert('$test');</script>";
-    
-    $suggestImg = (string)$item->resturant->image;
-    $suggestDesc = (string)$item->resturant->description;
-    $suggestAddress = (string)$item->resturant->address;
-    
-
-    //resturant information
-    //user information
+  
+    foreach ($xmldata-> resturant as $resturant)
+    {
+        if($resturant->name == $suggestRest)
+        {
+            $suggestImg = (string)$resturant->image;
+            $suggestDesc = (string)$resturant->description;
+            $suggestAddress = (string)$resturant->address;
+        }
+    }
 
     include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/skeletontop.html");
     
@@ -70,10 +68,15 @@
             
                 <p class="titles">Dine meetup</p>
                 <blockquote class="resturantNames">$suggestRest</blockquote>
-                <blockquote><img src="/DineRoulette-tamkylet/app/images/12345dinnerTable.png" width="100%"/></blockquote>
+                <blockquote><img src="/DineRoulette-tamkylet/app/images/$suggestImg.png" width="100%"/></blockquote> 
 _END;
 
+    echo "<blockquote>";
+    include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/API/GoogleMaps/html/googlemaps.html");
+    echo "</blockquote>";
+    echo "<blockquote>$suggestAddress</blockquote>";
 ?>
+
             </br>
             <h3>Agreement to Dine</h3>
 
@@ -85,7 +88,7 @@ _END;
                  officia deserunt mollit anim id est laborum.
             </blockquote>
 
-            <h3> Pricing Details </h3>
+            <h3> Pay Restuarant </h3>
             <form id="paypalMid" action="startPayment.php" method="POST">
                  <input type="text" name="csrf" value="<?php echo($_SESSION['csrf']);?>" hidden readonly/>
                  <table>
@@ -151,8 +154,16 @@ _END;
      </script>
      <script src="//www.paypalobjects.com/api/checkout.js" async></script>
      
+     <h3>Reject this date</h3>
+     
+     <form class="requesting" method="post" action="/DineRoulette-tamkylet/app/php/home.php">
+        <input type="hidden" name="rejectDate" value="reject">
+        <button input type="submit" value="Reject" id="reject">Reject</button>
+    </form>  
      
 <?php
+
+
      include('footer.php');
 ?>
 

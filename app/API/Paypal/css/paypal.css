@@ -7,3 +7,12 @@
   margin: 0 auto; 
   width:250px;
 }
+
+#reject{
+  background-color: #B33A3A;
+  color: white;
+  font-family: arial;
+  width: 9em;
+  height: 3em;
+  font-size:125%;
+}

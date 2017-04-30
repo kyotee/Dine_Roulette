@@ -196,8 +196,18 @@ _END2;
             echo '<script>alert("Hello");</script>';
         }
         
-        
-        
+        // Rejection - user rejects a date request
+        // PRE: user must be signed in
+        // POST: user rejects a date and will be redirected back to user list
+        // PARAMS: $username = user who wants to reject date; $db = database Connection
+        function rejection($db,$username)
+        {
+            $query3 = "UPDATE user SET invitation='0'
+                       WHERE username='".$username."'";
+
+            $result3 = $db->query($query3);   
+            if (!$result3) die("Account has already been verified, please login.");    
+        }
     }
 
 ?>
