@@ -272,12 +272,26 @@ echo <<<_END3
                 </br>
                 
                 <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
+                    <p>Tell us about your date experience:</p>
+                    <textarea name="Comment1" rows="4" cols="50" maxlength="50">A big load of text</textarea></br></br>
+                    <p>Rating of date:</p>
+                    <select name="Comment2">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select></br></br>
                     <button input type="submit" value="PaypalPay">Return back to home page.</button>
                 </form>
 
+                <br/><br/><br/>
 
-                <p>Hello</p>
-                
+                <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
+                    <input type="hidden" name="noComments" value="0">
+                    <button input type="submit" value="PaypalPay">I don't want to leave comments.</button>
+                </form>
+
                 <br/><br/>
                 
             </div>   
