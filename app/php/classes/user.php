@@ -242,7 +242,10 @@ _END2;
             if (!$result4) die("Database access failed.");  
         }
         
-        
+        // Date occurance - record in database
+        // PRE: -
+        // POST: occured date will be updated
+        // PARAMS: $username = user who wants to reject date; $db = database Connection
         function reflect($username,$db)
         {
             $inviter = $_SESSION['inviterName'];
@@ -262,6 +265,10 @@ _END2;
                 return false;
         }
         
+        // Post date form - enables user to describe their date
+        // PRE: user must be signed in
+        // POST: form renders
+        // PARAMS: $username = user who wants to reject date; $db = database Connection
         function reflectForm($username,$db)
         {
             $inviter = $_SESSION['inviterName'];
@@ -273,22 +280,24 @@ echo <<<_END3
                 
                 <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
                     <p>Tell us about your date experience:</p>
-                    <textarea name="Comment1" rows="4" cols="50" maxlength="50">A big load of text</textarea></br></br>
+                    <textarea name="comment1" rows="4" cols="50" maxlength="50">A big load of text</textarea></br></br>
                     <p>Rating of date:</p>
-                    <select name="Comment2">
+                    <select name="comment2">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select></br></br>
-                    <button input type="submit" value="PaypalPay">Return back to home page.</button>
+                    <input type="hidden" name="dateInviter" value="$inviter">
+                    <button input type="submit" value="PaypalPay">Submit Comments</button>
                 </form>
 
                 <br/><br/><br/>
 
                 <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
                     <input type="hidden" name="noComments" value="0">
+                    <input type="hidden" name="dateInviter" value="$inviter">
                     <button input type="submit" value="PaypalPay">I don't want to leave comments.</button>
                 </form>
 
@@ -303,6 +312,39 @@ echo <<<_END3
     </html>                 
 _END3;
         }
+        
+        // Update post date information - enables user to describe their date
+        // PRE: user must be signed in
+        // POST: user's date secondary information will be updated
+        // PARAMS: $db = database Connection; $para = comments; $number = numerical ratings
+        function comments($db,$para,$number,$date)
+        {
+            $username = $_SESSION['username'];
+            
+            $query6 = "UPDATE restaurant
+                       SET commentsforusername1 = '$para', ratingforusername1 = '$number'
+                       WHERE username1 = '$username' AND username2 = '$date'";
+                      
+            $result6 = $db->query($query6);
+            if (!$result6) die ("Database access failed." . $db->error); 
+        }
+        
+        // No comments provided - user doesn't want to leave comments about date
+        // PRE: user must be signed in
+        // POST: form will not render onwards
+        // PARAMS: $db = database Connection; $para = comments; $number = numerical ratings
+        function noComments($db,$date)
+        {
+            $username = $_SESSION['username'];
+            
+            $query7 = "UPDATE restaurant
+                      SET seen = '1'
+                      WHERE username1 = '$username' AND username2 = '$date'";
+                       
+            $result7 = $db->query($query7);
+            if (!$result7) die ("Database access failed." . $db->error); 
+        }
+        
     }
 
 ?>

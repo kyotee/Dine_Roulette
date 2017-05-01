@@ -31,7 +31,23 @@ _END;
         $userSignedIn = new User($_SESSION['username']);
         $username = $_SESSION['username'];
   
-        if(isset($_POST['rejectDate']))
+        if(isset($_POST['comment1']) || isset($_POST['comment2']))
+        {
+            $para = $_POST['comment1'];
+            $number = $_POST['comment2'];
+            $date = $_POST['dateInviter'];
+
+            $userSignedIn->comments($db,$para,$number,$date);       
+            $userSignedIn->display($db);
+        }
+        else if(isset($_POST['noComments']))
+        {
+            $date = $_POST['dateInviter'];
+            
+            $userSignedIn->noComments($db,$date); 
+            $userSignedIn->display($db);
+        }
+        else if(isset($_POST['rejectDate']))
         {
             $userSignedIn->rejection($db,$username);
             $userSignedIn->display($db);
