@@ -68,6 +68,10 @@
                     
         echo <<<_END1
           
+          <br/>
+          <p class="titles">Member List</p>
+          </br>
+          
           <div class="homeplace">   
                     
             <div class="placeholder">  
@@ -222,6 +226,10 @@ _END2;
             if (!$result3) die("Database access failed.");
         }
         
+        // Date - indicates a date occured
+        // PRE: user must be signed in
+        // POST: update table to reflect that date occured
+        // PARAMS: $username = user who wants to reject date; $db = database Connection
         function updatePaid($db,$username)
         {
             $inviter = $_SESSION['inviterName'];
@@ -232,6 +240,54 @@ _END2;
 
             $result4 = $db->query($query4);
             if (!$result4) die("Database access failed.");  
+        }
+        
+        
+        function reflect($username,$db)
+        {
+            $inviter = $_SESSION['inviterName'];
+            
+            $query5 = "SELECT *
+                       FROM restaurant
+                       WHERE username1 = '$username' AND username2 = '$inviter'";
+                      
+            $result5 = $db->query($query5);
+                if (!$result5) die ("Database access failed." . $db->error);  
+            
+            $row = $result5->fetch_assoc();
+            
+            if ((int)$row["seen"] == '0')
+                return true;
+            else 
+                return false;
+        }
+        
+        function reflectForm($username,$db)
+        {
+            $inviter = $_SESSION['inviterName'];
+
+echo <<<_END3
+                <br/>
+                <p class="titles">How was your date with $inviter?</p>
+                </br>
+                
+                <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
+                    <button input type="submit" value="PaypalPay">Return back to home page.</button>
+                </form>
+
+
+                <p>Hello</p>
+                
+                <br/><br/>
+                
+            </div>   
+            
+          </div>
+            
+       </body>
+        
+    </html>                 
+_END3;
         }
     }
 

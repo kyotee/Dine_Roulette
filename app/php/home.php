@@ -24,9 +24,6 @@ _MSG;
             <div class="inbordermid">
             
                 <div class="inbordermidPAD">
-                    <br/>
-                    <p class="titles">Member List</p>
-                    </br>
 _END;
 
         include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/php/classes/user.php");
@@ -56,6 +53,10 @@ _END;
         {
             echo '<script>alert("Someone sent you a request!");</script>';
             $userSignedIn->matched();   
+        }
+        else if ($userSignedIn->reflect($username,$db) == true)
+        {
+            $userSignedIn->reflectForm($username,$db);   //checkout the reflection for the form
         }
         else
             $userSignedIn->display($db);

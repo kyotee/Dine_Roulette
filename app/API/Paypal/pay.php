@@ -82,9 +82,6 @@
             </h4>
             <br/>
     
-    
-    
-            
             <?php
                 include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/php/classes/user.php");
             
@@ -115,8 +112,6 @@
                 
                 $headers = 'From:noreply@radiant-taiga-47474.herokuapp.com' . "\r\n"; // Set from headers
                 mail($to, $subject, $message, $headers); // Send our email
-
-                
             ?>
             
             <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">

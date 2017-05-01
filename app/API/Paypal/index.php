@@ -103,6 +103,14 @@ _END;
                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
                  officia deserunt mollit anim id est laborum.
             </blockquote>
+            
+            <h3>Inviter</h3>
+            
+            <blockquote>
+                <img src='/DineRoulette-tamkylet/app/images/memberPictures/<?php echo "$inviterName" ?>.png' style='width:5.25em;height:5.25em' alt='[]' />
+                <p><?php echo "$inviterName" ?></p>
+            </blockquote>
+            
 
             <h3> Pay Restuarant </h3>
             <form id="paypalMid" action="startPayment.php" method="POST">
