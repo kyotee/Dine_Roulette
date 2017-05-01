@@ -93,9 +93,7 @@
                 echo "<script>alert('Email has been sent to inviter to pay their fee.');</script>";
 
                 //-------------------------------Notification email --------------------------------------------
-                //verification email used only when deployment server is created
-                //...right now we will assume every signup was verified => active set to '1'
-                
+
                 $inviter = $_SESSION['inviterName'];
                 
                 $to      = $inviterEmail;
