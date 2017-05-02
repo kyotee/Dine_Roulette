@@ -85,7 +85,6 @@ _END;
     echo "</blockquote>";
     echo "<blockquote>$suggestAddress</blockquote>";
 ?>
-
             </br>
             <h3>Agreement to Dine</h3>
             <blockquote>
