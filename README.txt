@@ -4,7 +4,7 @@ This project serves for learning purposes only. Project fixates on implementing 
 which excludes notions of creating an actual service that reflects upon current industry standards.
 
 [DECLAIMER]
-This application is for learning purposes only. 
+This application is for learning purposes only.
 Please contact me at: tamkylet@sfu.ca if any legal issues that exist.
 
 [DATABASE]
@@ -34,3 +34,7 @@ source: https://www.pexels.com/photo/restaurant-bottles-dinner-lunch-66640/
 [PAYPAL SANDBOX ACCOUNT]
 email: user00@gmail.com
 password: Password00
+
+[PROJECT PROBLEM]
+Unable to display 45 commits in paypalAPI branch on Github due to past stashing problem. However, local machine
+does display these commits.
