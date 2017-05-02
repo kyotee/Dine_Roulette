@@ -3,7 +3,6 @@
         session_start();
         if ($_SESSION['userIDmaster'] != 1)
         {
-                
                 echo <<<_MSG
                 <script>
                     document.location.href = '/DineRoulette-tamkylet/index.php';
@@ -13,44 +12,37 @@ _MSG;
         else
         {}
 
-
 echo <<<_END
-
         <button onclick="myFunction()">Logout</button>
-        
+
         <script>
            function myFunction() {
                 document.location.href = '/DineRoulette-tamkylet/index.php';
             }
         </script>
-            
 _END;
 
     require_once 'userlist.php';
- 
+
     //credentials for localserver
     $servername = getenv('IP');
     $username = "tamkylet";
     $password = "password";
     $database = "dine";
     $dbport = 3306;
-    
+
     // Create connection
     $db = new mysqli($servername, $username, $password, $database, $dbport);
 
     // Check connection
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
-    } 
+    }
 
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    
     if (isset($_POST['delete']) && isset($_POST['username']))
     {
         $username = get_post($db, 'username');
-        $query = "DELETE FROM user 
+        $query = "DELETE FROM user
                   WHERE username='$username'";
         $result = $db->query($query);
         if (!$result) echo "DELETE failed: $query<br>" .
@@ -63,23 +55,22 @@ _END;
         $lastname = get_post($db, 'lastname');
         $email = get_post($db, 'email');
         $password = get_post($db, 'password');
-        
+
         $salt1 = "qm&h*";
         $salt2 = "pg!@";
-            
         $token = hash('ripemd128',"$salt1$password$salt2");
-        
+
         $query = "INSERT INTO user(username,firstname,lastname,email,password,active,datejoined,datesattended,rating)
                VALUES('$username','$firstname','$lastname','$email','$token','1','2016-08-05','1','1')";
-        
+
         $result = $db->query($query);
         if (!$result) echo "INSERT failed: $query<br>" .
         $db->error . "<br><br>";
-        
+
         copy('/home/ubuntu/workspace/DineRoulette-tamkylet/app/images/derp.png', '/home/ubuntu/workspace/DineRoulette-tamkylet/app/images/memberPictures/derp.png');
         rename('/home/ubuntu/workspace/DineRoulette-tamkylet/app/images/memberPictures/derp.png', '/home/ubuntu/workspace/DineRoulette-tamkylet/app/images/memberPictures/'.$username.'.png');
     }
-    
+
     echo <<<_END
         <form action="userlist.php" method="post"><pre>
         Username <input type="text" name="username">
@@ -91,7 +82,7 @@ _END;
         </pre></form>
 _END;
 
-    //----------------------------------------------- sorted category ----------------------------------------------- 
+    //----------------------------------------------- sorted category -----------------------------------------------
 
     echo <<<_END1
    <form action="userlist.php" method="post">
@@ -114,19 +105,19 @@ _END1;
 
     if (isset($_POST['sorted']))
     {
-            $query = "SELECT * 
+            $query = "SELECT *
                       FROM user
                       ORDER BY username";
             $result = $db->query($query);
             if (!$result) die ("Database access failed: " . $db->error);
-            
+
             $rows = $result->num_rows;
-            
+
             for ($j = 0 ; $j < $rows ; ++$j)
             {
                 $result->data_seek($j);
                 $row = $result->fetch_array(MYSQLI_NUM);
-                
+
                 echo <<<_END
                 <pre>
                 Username: $row[0]
@@ -141,24 +132,24 @@ _END1;
                 <input type="submit" value="DELETE RECORD"></form>
 _END;
             }
-            
+
             $db->close();
     }
     else if(isset($_POST['sortedFirst']))
-     {   
-            $query = "SELECT * 
+     {
+            $query = "SELECT *
               FROM user
               ORDER BY firstname";
             $result = $db->query($query);
             if (!$result) die ("Database access failed: " . $db->error);
-            
+
             $rows = $result->num_rows;
-            
+
             for ($j = 0 ; $j < $rows ; ++$j)
             {
                 $result->data_seek($j);
                 $row = $result->fetch_array(MYSQLI_NUM);
-                
+
                 echo <<<_END
                 <pre>
                 Username: $row[0]
@@ -173,24 +164,24 @@ _END;
                 <input type="submit" value="DELETE RECORD"></form>
 _END;
             }
-            
+
             $db->close();
     }
     else if(isset($_POST['sortedLast']))
     {
-            $query = "SELECT * 
+            $query = "SELECT *
             FROM user
             ORDER BY lastname";
             $result = $db->query($query);
             if (!$result) die ("Database access failed: " . $db->error);
-            
+
             $rows = $result->num_rows;
-            
+
             for ($j = 0 ; $j < $rows ; ++$j)
             {
                 $result->data_seek($j);
                 $row = $result->fetch_array(MYSQLI_NUM);
-                
+
                 echo <<<_END
                 <pre>
                 Username: $row[0]
@@ -205,23 +196,23 @@ _END;
                 <input type="submit" value="DELETE RECORD"></form>
 _END;
             }
-            
+
             $db->close();
     }
     else
     {
-            $query = "SELECT * 
+            $query = "SELECT *
                       FROM user";
             $result = $db->query($query);
             if (!$result) die ("Database access failed: " . $db->error);
-            
+
             $rows = $result->num_rows;
-            
+
             for ($j = 0 ; $j < $rows ; ++$j)
             {
                 $result->data_seek($j);
                 $row = $result->fetch_array(MYSQLI_NUM);
-                
+
                 echo <<<_END
                 <pre>
                 Username: $row[0]
@@ -236,18 +227,14 @@ _END;
                 <input type="submit" value="DELETE RECORD"></form>
 _END;
             }
-            
-            $db->close();        
-      
+
+            $db->close();
+
     }
 
-
-    
     function get_post($conn, $var)
     {
         return $conn->real_escape_string($_POST[$var]);
     }
-    
 
-            
 ?>

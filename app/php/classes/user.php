@@ -1,5 +1,5 @@
 <?php
-    
+
     //credentials for localserver
     $servername = getenv('IP');
     $username = "tamkylet";
@@ -7,18 +7,17 @@
     $database = "dine";
     $dbport = 3306;
     session_start();
-    
+
     // Create connection
     $db = new mysqli($servername, $username, $password, $database, $dbport);
-    
+
     // Check connection
     if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
-    } 
-        
+    }
 
     class User
-    {    
+    {
         // Constructor - creates instance of class
         // PRE: -
         // POST: instantiated object
@@ -27,7 +26,7 @@
     	{
     		$username = $param1;
     	}
-    
+
         // Destructor - deletes instance of class
         // PRE: existing object must be present
         // POST: deletes instantiated object
@@ -36,93 +35,70 @@
         {
             unset($this);
         }
-        
+
         // Userlist - displays all users of service
         // PRE: user must be signed in
-        // POST: users and associated primary information displayed; able to access 
+        // POST: users and associated primary information displayed; able to access
         //       secondary information and request date
         // PARAMS: $db = database Connection
         function display($db)
         {
-        
+
             $username = $_SESSION['username'];
             $username1 = "masteruser";
-            
-            $query = "SELECT * 
+
+            $query = "SELECT *
                       FROM user
                       WHERE username != '$username' && username != '$username1'";
-                      
+
             $result = $db->query($query);
-            if (!$result) die ("Database access failed." . $db->error);            
-            
-            
+            if (!$result) die ("Database access failed." . $db->error);
+
             $rows = $result->num_rows;
 
-            
             for ($j = 0 ; $j < $rows ; ++$j)   // can't execute for-loop
             {
-                
                 $result->data_seek($j);
                 $row = $result->fetch_array(MYSQLI_NUM);
-                
-                    
+
         echo <<<_END1
-          
           <br/>
           <p class="titles">Member List</p>
           </br>
-          
-          <div class="homeplace">   
-                    
-            <div class="placeholder">  
-            
+          <div class="homeplace">
+            <div class="placeholder">
                 <a class="NoColor" href="/DineRoulette-tamkylet/app/php/profile.php">
-            
-                <div class="homeimg">    
-                    
+                <div class="homeimg">
                   <img src='/DineRoulette-tamkylet/app/images/memberPictures/$row[0].png' style='width:5.25em;height:5.25em' alt='[]' />
-              
                 </div>
-            
                  <div class="hometext">
                     <pre class="name">
-                    $row[0]   
+                    $row[0]
                     </pre>
                     <pre>
                     Dates Attended:     $row[7]
                     Rating:             $row[8]
                     </pre>
-                    
                  </div>
-                   
-            </div>   
-     
+            </div>
             <form class="requesting" method="post" action="/DineRoulette-tamkylet/app/php/home.php">
                 <input type="hidden" name="requested" value="$row[0]">
                 <button input type="submit" value="Request Date" style="display:block; color:white; background-color:#008080; padding:0.25em; margin: 0 auto;">Request Date</button>
-            </form>  
-     
+            </form>
+
             <script src='/DineRoulette-tamkylet/app/javascript/home.js'></script>
-    
+
           </div>
-            
 _END1;
-            }           
-        
+            }
+
         echo <<<_END2
-                
                 <br/><br/>
-                
-            </div>   
-            
+            </div>
           </div>
-                
-            
        </body>
-        
-    </html>    
+    </html>
 _END2;
-             
         }
 
         // Request handling - user has request date with other user
@@ -140,10 +116,10 @@ _END2;
                        WHERE username = '$requestedUser'";
 
             $result1 = $db->query($query1);
-            if (!$result1) die ("Database access failed." . $db->error);  
-            
+            if (!$result1) die ("Database access failed." . $db->error);
+
         }
-        
+
         // Invitation checker - check to see if current user has an invite
         // PRE: user must be signed in
         // POST: returns true if user has an invite; otherwise false
@@ -153,53 +129,39 @@ _END2;
             $query2 = "SELECT invitation
                        FROM user
                        WHERE username = '$checkUser'";
-                      
+
             $result2 = $db->query($query2);
-                if (!$result2) die ("Database access failed." . $db->error);  
-            
+                if (!$result2) die ("Database access failed." . $db->error);
+
             $row = $result2->fetch_assoc();
-            
+
             if ($row["invitation"] == '1')
                 return true;
-            else 
+            else
                 return false;
         }
-          
+
         // Date confirmination - both users have agree upon date
         // PRE:
         // POST:
-        // PARAMS: 
-        function matched()  
+        // PARAMS:
+        function matched()
         {
 
         echo <<<_END2
-        
+
                 <script>
                     document.location.href = '/DineRoulette-tamkylet/app/API/Paypal/index.php';
                 </script>
-                
+
                 <br/><br/>
-                
-            </div>   
-            
+            </div>
           </div>
-            
        </body>
-        
-    </html>    
+    </html>
 _END2;
-            
         }
-        
-        // Request handling - user has request date with other user
-        // PRE: user must be signed in
-        // POST: user sucessfully sends request to other user
-        // PARAMS: $requestedUser = update credentials of user being requested; $db = database Connection
-        function paid($db)
-        {
-            echo '<script>alert("Hello");</script>';
-        }
-        
+
         // Rejection - user rejects a date request
         // PRE: user must be signed in
         // POST: user rejects a date and will be redirected back to user list
@@ -209,10 +171,10 @@ _END2;
             $query3 = "UPDATE user SET invitation='0'
                        WHERE username='".$username."'";
 
-            $result3 = $db->query($query3);   
-            if (!$result3) die("Database access failed.");    
+            $result3 = $db->query($query3);
+            if (!$result3) die("Database access failed.");
         }
-        
+
         // Paid - user paid with Paypal
         // PRE: user must be signed in
         // POST: Paypal deducts $20 from user account
@@ -222,10 +184,10 @@ _END2;
             $query3 = "UPDATE user SET invitation='0'
                        WHERE username='".$username."'";
 
-            $result3 = $db->query($query3);   
+            $result3 = $db->query($query3);
             if (!$result3) die("Database access failed.");
         }
-        
+
         // Date - indicates a date occured
         // PRE: user must be signed in
         // POST: update table to reflect that date occured
@@ -239,9 +201,9 @@ _END2;
                VALUES('$username','$inviter','$restaurant','1')";
 
             $result4 = $db->query($query4);
-            if (!$result4) die("Database access failed.");  
+            if (!$result4) die("Database access failed.");
         }
-        
+
         // Date occurance - record in database
         // PRE: -
         // POST: occured date will be updated
@@ -249,22 +211,22 @@ _END2;
         function reflect($username,$db)
         {
             $inviter = $_SESSION['inviterName'];
-            
+
             $query5 = "SELECT *
                        FROM restaurant
                        WHERE username1 = '$username' AND username2 = '$inviter'";
-                      
+
             $result5 = $db->query($query5);
-                if (!$result5) die ("Database access failed." . $db->error);  
-            
+                if (!$result5) die ("Database access failed." . $db->error);
+
             $row = $result5->fetch_assoc();
-            
+
             if ((int)$row["seen"] == '0')
                 return true;
-            else 
+            else
                 return false;
         }
-        
+
         // Post date form - enables user to describe their date
         // PRE: user must be signed in
         // POST: form renders
@@ -277,7 +239,7 @@ echo <<<_END3
                 <br/>
                 <p class="titles">How was your date with $inviter?</p>
                 </br>
-                
+
                 <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
                     <p>Tell us about your date experience:</p>
                     <textarea name="comment1" rows="4" cols="50" maxlength="50">A big load of text</textarea></br></br>
@@ -292,27 +254,20 @@ echo <<<_END3
                     <input type="hidden" name="dateInviter" value="$inviter">
                     <button input type="submit" value="PaypalPay">Submit Comments</button>
                 </form>
-
                 <br/><br/><br/>
-
                 <form method="post" action="/DineRoulette-tamkylet/app/php/home.php">
                     <input type="hidden" name="noComments" value="0">
                     <input type="hidden" name="dateInviter" value="$inviter">
                     <button input type="submit" value="PaypalPay">I don't want to leave comments.</button>
                 </form>
-
                 <br/><br/>
-                
-            </div>   
-            
+            </div>
           </div>
-            
        </body>
-        
-    </html>                 
+    </html>
 _END3;
         }
-        
+
         // Update post date information - enables user to describe their date
         // PRE: user must be signed in
         // POST: user's date secondary information will be updated
@@ -320,15 +275,15 @@ _END3;
         function comments($db,$para,$number,$date)
         {
             $username = $_SESSION['username'];
-            
+
             $query6 = "UPDATE restaurant
                        SET commentsforusername1 = '$para', ratingforusername1 = '$number'
                        WHERE username1 = '$username' AND username2 = '$date'";
-                      
+
             $result6 = $db->query($query6);
-            if (!$result6) die ("Database access failed." . $db->error); 
+            if (!$result6) die ("Database access failed." . $db->error);
         }
-        
+
         // No comments provided - user doesn't want to leave comments about date
         // PRE: user must be signed in
         // POST: form will not render onwards
@@ -336,15 +291,14 @@ _END3;
         function noComments($db,$date)
         {
             $username = $_SESSION['username'];
-            
+
             $query7 = "UPDATE restaurant
                       SET seen = '1'
                       WHERE username1 = '$username' AND username2 = '$date'";
-                       
+
             $result7 = $db->query($query7);
-            if (!$result7) die ("Database access failed." . $db->error); 
+            if (!$result7) die ("Database access failed." . $db->error);
         }
-        
     }
 
 ?>

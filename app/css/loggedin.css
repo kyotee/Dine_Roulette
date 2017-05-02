@@ -1,8 +1,6 @@
-
 html, body {
     height: 100%;
 }
-
 
 .wrapper{
   position:relative;
@@ -145,7 +143,7 @@ blockquote{
 }
 
 .name{
-  font-weight:bold;  
+  font-weight:bold;
   color:#abab9a;
 }
 
@@ -176,4 +174,3 @@ blockquote{
 .NoColor{
   text-decoration: none;
 }
-

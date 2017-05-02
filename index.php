@@ -1,38 +1,34 @@
 <?php
-  
-    require_once 'index.php';   
-    
-   
+    require_once 'index.php';
+
    //-------------------------------------------- Database Connection ------------------------------------
-   
+
     //credentials for localserver
     $servername = getenv('IP');
     $username = "tamkylet";
     $password = "password";
     $database = "dine";
     $dbport = 3306;
-    
+
     // Create connection
     $db = new mysqli($servername, $username, $password, $database, $dbport);
 
     // Check connection
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
-    } 
-    
+    }
     echo "<br>";
-    
+
     //-------------------------------------------- Database Connection ------------------------------------
-    
+
     session_start();
     $_SESSION['userID'] = 0;
     $_SESSION['userIDmaster'] = 0;
-   
-   
-    //-------------------------------------------- Registration -------------------------------------------   
+
+    //-------------------------------------------- Registration -------------------------------------------
 
     include ("/home/ubuntu/workspace/DineRoulette-tamkylet/app/html/layout.html");
-    
+
     if (isset($_COOKIE['exists']))
     {
     echo <<<_END
@@ -45,33 +41,25 @@ _END;
     }
     else
     {}
-    
 
     echo <<<_END
-        
             <head>
                 <noscript>
                     <style>html{display:none;}</style>
                     <meta http-equiv="refresh" content="0.0;url=/app/html/nojavascript.html">
                 </noscript>
-                
                 <script src='/DineRoulette-tamkylet/app/javascript/jquery-3.1.0.min.js'></script>
-                <script src='/DineRoulette-tamkylet/app/javascript/signup.js'></script>                
+                <script src='/DineRoulette-tamkylet/app/javascript/signup.js'></script>
                 <script src='/DineRoulette-tamkylet/app/javascript/login.js'></script>
-                
                 <link href="/DineRoulette-tamkylet/app/css/signup.css" rel="stylesheet" type="text/css"/>
             </head>
-            
+
             <body>
-            
                 <div id="signup1" style="display:none">
                 <br>
                 <p id="diningLogin">DineRoulette</p>
-                
                   <table border="0" cellpadding="2" cellspacing="5" width="400">
-
                   <form method="post" action="/DineRoulette-tamkylet/app/php/registration.php" onSubmit="return validate(this)">
-
                     <tr>
                         <td id='signup'></td>
                     </tr>
@@ -97,10 +85,9 @@ _END;
                 </form>
                 </table>
                </div>
-             
 _END;
-    
-    //-------------------------------------------- Registration -------------------------------------------    
+
+    //-------------------------------------------- Registration -------------------------------------------
 
     if (isset($_COOKIE['success']))
     {
@@ -113,9 +100,9 @@ _END;
         setcookie('success', 'success', time() - 20, '/');
     }
     else
-    {}   
-   
- 
+    {}
+
+
     if (isset($_COOKIE['mismatch']))
     {
     echo <<<_END
@@ -127,18 +114,14 @@ _END;
         setcookie('mismatch', 'mismatch', time() - 20, '/');
     }
     else
-    {}      
-    //----------------------------------------------- Login -----------------------------------------------   
+    {}
+    //----------------------------------------------- Login -----------------------------------------------
 
-   
     echo <<<_END1
-             
                 <div id="login1">
                 <br>
                 <p id="diningLogin">DineRoulette</p>
-                
                   <table border="0" cellpadding="2" cellspacing="5" width="400">
-
                   <form method="post" action="/DineRoulette-tamkylet/app/php/login.php" onSubmit="return validate1(this)">
                     <tr>
                         <td id='login'></td>
@@ -153,25 +136,21 @@ _END;
                         <td colspan="2" align="center"><input type="submit" value="Login"></td>
                     </tr>
                     <tr><td></td></tr>
-                    <tr><td></td></tr>                    
+                    <tr><td></td></tr>
                     <tr>
                         <td><button id="link">Register</button></td>
                     </tr>
                 </form>
-                </table>    
-                
+                </table>
+
                 <script>
                     $('#link').click( function() { $("#signup1").show(); $("#login1").hide(); });
                 </script>
               </div>
-              
 _END1;
 
+    //----------------------------------------------- Login -----------------------------------------------
 
-    //----------------------------------------------- Login -----------------------------------------------    
-   
-   
-   
    echo "</body>";
    echo "</html>";
 ?>

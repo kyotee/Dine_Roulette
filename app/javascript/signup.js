@@ -5,7 +5,7 @@ function validate(form)
     fail += validateLastname(form.lastname.value)
     fail += validateEmail(form.email.value)
     fail += validatePassword(form.password.value)
-    
+
     if (fail == "") return true
     else { $('#signup').html(fail); return false }
 }
