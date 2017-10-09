@@ -17,7 +17,7 @@ Administrator User Credentials:
 
 Regular User Credentials:
 
-- `Username: abc123abc'  `Password: abc123abcA1`
+- `Username: abc123abc`  `Password: abc123abcA1`
 
 
 Pseudo Paypal Transaction Credentials:
